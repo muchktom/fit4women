@@ -1,0 +1,101 @@
+{# =========================================================================
+   FIT4WOMEN – dočasná brána heslem (po dobu vývoje na GitHubu).
+
+   POZOR: Toto NENÍ skutečné zabezpečení. GitHub Pages je statický hosting
+   a nedokáže chránit stránku na serveru. Tato brána jen zabrání tomu, aby
+   se na rozpracovaný web někdo dostal omylem. Kdo umí číst zdrojový kód,
+   ověření obejde.
+
+   ZMĚNA HESLA:
+     printf '%s' 'NoveHeslo' | shasum -a 256
+   výsledný hash vlož do obou míst PASS_HASH níže.
+
+   VYPNUTÍ BRÁNY (až půjde web naostro):
+     v base.njk odeber řádek  {% raw %}{% include "gate.njk" %}{% endraw %}
+   ========================================================================= #}
+
+<script>
+  // Běží co nejdřív: pokud uživatel není ověřený, zamkne stránku.
+  (function () {
+    var PASS_HASH = "1e778d2b970a9e0b627550e911ded0a26c4c34460a9fcf8a06a53a493e282f39";
+    try {
+      if (sessionStorage.getItem("f4w-gate-ok") === PASS_HASH) return;
+    } catch (e) {}
+    document.documentElement.classList.add("gate-locked");
+  })();
+</script>
+
+<style>
+  html.gate-locked body > *:not(#gate) { display: none !important; }
+  html.gate-locked, html.gate-locked body { overflow: hidden; }
+
+  #gate { display: none; }
+  html.gate-locked #gate {
+    position: fixed; inset: 0; z-index: 99999;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; background: #5b2a86;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  #gate .box {
+    background: #fff; border-radius: 16px; padding: 32px;
+    max-width: 360px; width: 100%; box-sizing: border-box;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .3); text-align: center;
+  }
+  #gate h1 { font-size: 20px; margin: 0 0 4px; color: #2b1240; }
+  #gate p { font-size: 14px; color: #6b5b7a; margin: 0 0 20px; }
+  #gate input {
+    width: 100%; box-sizing: border-box; padding: 12px 14px;
+    font-size: 16px; border: 1px solid #d9cde6; border-radius: 10px;
+  }
+  #gate button {
+    width: 100%; margin-top: 12px; padding: 12px; font-size: 16px;
+    font-weight: 600; color: #fff; background: #5b2a86;
+    border: 0; border-radius: 10px; cursor: pointer;
+  }
+  #gate .err { color: #c0392b; font-size: 13px; min-height: 18px; margin-top: 10px; }
+</style>
+
+<div id="gate">
+  <form class="box" id="gate-form" autocomplete="off">
+    <h1>FIT4WOMEN</h1>
+    <p>Web je ve výstavbě. Zadejte prosím heslo.</p>
+    <input type="password" id="gate-input" placeholder="Heslo" aria-label="Heslo" autofocus>
+    <button type="submit">Vstoupit</button>
+    <div class="err" id="gate-err" role="alert"></div>
+  </form>
+</div>
+
+<script>
+  (function () {
+    var PASS_HASH = "1e778d2b970a9e0b627550e911ded0a26c4c34460a9fcf8a06a53a493e282f39";
+    var form = document.getElementById("gate-form");
+    if (!form) return;
+
+    async function sha256(text) {
+      var data = new TextEncoder().encode(text);
+      var buf = await crypto.subtle.digest("SHA-256", data);
+      return Array.from(new Uint8Array(buf))
+        .map(function (b) { return b.toString(16).padStart(2, "0"); })
+        .join("");
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var input = document.getElementById("gate-input");
+      var err = document.getElementById("gate-err");
+      try {
+        var hash = await sha256(input.value);
+        if (hash === PASS_HASH) {
+          try { sessionStorage.setItem("f4w-gate-ok", PASS_HASH); } catch (e2) {}
+          document.documentElement.classList.remove("gate-locked");
+        } else {
+          err.textContent = "Nesprávné heslo.";
+          input.value = "";
+          input.focus();
+        }
+      } catch (e3) {
+        err.textContent = "Ověření vyžaduje zabezpečené připojení (https).";
+      }
+    });
+  })();
+</script>
