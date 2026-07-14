@@ -5,10 +5,10 @@
    ========================================================================== */
 :root{
   --plum-900:#3a1f3d;      /* skoro černá švestková – footer, tmavé nadpisy */
-  --purple-700:#5b2a86;    /* hluboká fialová – tmavý pruh */
-  --purple-600:#6d3a97;
-  --purple-500:#7e4aa6;    /* primární tlačítka */
-  --purple-400:#9a6bbd;
+  --purple-700:#774bad;    /* hluboká fialová – tmavý pruh */
+  --purple-600:#8d54cc;
+  --purple-500:#9755d1;    /* primární tlačítka – světlá, sytá ametystová */
+  --purple-400:#be8ce9;
   --lav-100:#f2ebf6;       /* jemné fialové pozadí */
   --taupe-700:#6f6154;     /* šedo-hnědá – text, ikony */
   --taupe-300:#c9bcae;
@@ -69,7 +69,7 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(250,246,241,.92);
 .burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
 .burger span{display:block;width:24px;height:2px;background:var(--plum-900);margin:5px 0;border-radius:2px}
 
-/* ---------- Hero (domovská) — split: text + kruhové fotky ---------- */
+/* ---------- Hero (domovská) – split: text + kruhové fotky ---------- */
 .hero{position:relative;color:#fff;overflow:hidden;padding:0;
   background:radial-gradient(120% 120% at 85% 10%,var(--purple-600) 0%,var(--purple-700) 45%,var(--plum-900) 100%)}
 .hero::before{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
@@ -95,7 +95,7 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(250,246,241,.92);
 .hero-photo.sub{width:min(38%,180px);aspect-ratio:1;right:2%;bottom:4%;border-width:4px;
   box-shadow:0 16px 40px rgba(58,31,61,.4)}
 
-/* ---------- Page hero (podstránky) — lehká hlavička, obsah napřed ---------- */
+/* ---------- Page hero (podstránky) – lehká hlavička, obsah napřed ---------- */
 .page-hero{position:relative;text-align:center;padding:66px 0 34px;background:var(--sand-50)}
 .page-hero .eyebrow{color:var(--purple-500)}
 .page-hero h1{font-size:clamp(2rem,4.4vw,2.9rem);color:var(--plum-900);margin:.4em 0 .3em}
@@ -129,15 +129,15 @@ section{padding:74px 0}
 .track a.more:hover{gap:.7em}
 
 /* ---------- Pruh: pohyb + 3 hodnoty ---------- */
-.band{background:linear-gradient(140deg,var(--purple-700),var(--purple-500));color:#fff}
+.band{background:linear-gradient(140deg,var(--purple-700),var(--purple-600));color:#fff}
 .band .intro{text-align:center;max-width:720px;margin:0 auto 54px}
 .band .intro h2{font-size:clamp(1.6rem,3.6vw,2.4rem);margin:0 0 16px}
-.band .intro p{color:#efe3f5;margin:0;font-size:1.08rem}
+.band .intro p{color:#fff;margin:0;font-size:1.08rem}
 .values{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;text-align:center}
 .value .ic{width:64px;height:64px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;
   background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3)}
 .value h3{font-size:1.3rem;letter-spacing:.06em;margin:0 0 8px;text-transform:uppercase}
-.value p{color:#eaddf1;margin:0;font-size:.98rem}
+.value p{color:#fff;margin:0;font-size:.98rem}
 svg.icon{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
 /* ---------- Kids-friendly: kruhové fotky + text ---------- */
@@ -231,9 +231,9 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
 .sched{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .sc{background:#fff;border:1px solid var(--taupe-200);border-radius:var(--radius);overflow:hidden;
   box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
-.sc .top{background:linear-gradient(140deg,var(--purple-700),var(--purple-500));color:#fff;padding:20px 24px}
+.sc .top{background:linear-gradient(140deg,var(--purple-700),var(--purple-600));color:#fff;padding:20px 24px}
 .sc .top .day{font-family:var(--serif);font-size:1.4rem}
-.sc .top .time{font-size:.95rem;color:#f0e4d6;font-weight:600;letter-spacing:.04em}
+.sc .top .time{font-size:.95rem;color:#fff;font-weight:600;letter-spacing:.04em}
 .sc .body{padding:20px 24px;flex:1;display:flex;flex-direction:column}
 .sc .body h3{margin:0 0 6px;color:var(--plum-900);font-size:1.15rem}
 .sc .body .place{font-size:.85rem;color:var(--muted);margin-bottom:12px}
@@ -268,7 +268,7 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
 .pc{background:#fff;border:1px solid var(--taupe-200);border-radius:var(--radius);padding:28px 26px;
   box-shadow:var(--shadow-sm);text-align:center;transition:transform .18s,box-shadow .18s}
 .pc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.pc.feature{border-color:var(--purple-400);box-shadow:0 12px 34px rgba(126,74,166,.18)}
+.pc.feature{border-color:var(--purple-400);box-shadow:0 12px 34px rgba(151,85,209,.18)}
 .pc .name{font-family:var(--serif);font-size:1.25rem;color:var(--plum-900);margin-bottom:6px}
 .pc .sub{font-size:.85rem;color:var(--muted);min-height:38px;margin-bottom:14px}
 .pc .amount{font-family:var(--serif);font-size:2.4rem;color:var(--purple-600);line-height:1}
@@ -288,7 +288,7 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
   padding:12px 14px;border:1.5px solid var(--taupe-200);border-radius:10px;background:var(--sand-50);
   transition:border-color .15s,box-shadow .15s}
 .form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--purple-400);
-  box-shadow:0 0 0 3px rgba(126,74,166,.15);background:#fff}
+  box-shadow:0 0 0 3px rgba(151,85,209,.15);background:#fff}
 .form textarea{min-height:110px;resize:vertical}
 .form .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .form .submit{width:100%;justify-content:center;margin-top:6px}

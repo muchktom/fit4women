@@ -31,7 +31,7 @@ document.addEventListener("submit", function (e) {
   form.querySelectorAll("input, select, textarea").forEach(function (f) {
     if (!f.name || f.type === "submit") return;
     var label = f.getAttribute("data-label") || f.name;
-    lines.push(label + ": " + (f.value || "—"));
+    lines.push(label + ": " + (f.value || "–"));
   });
   var body = encodeURIComponent(lines.join("\n"));
   window.location.href =
