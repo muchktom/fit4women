@@ -27,7 +27,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
           cache-dependency-path: web/package-lock.json
 
@@ -37,9 +37,6 @@ jobs:
         run: npm run build
 
       - uses: actions/configure-pages@v5
-        with:
-          # Zapne GitHub Pages automaticky při prvním běhu (source = GitHub Actions)
-          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
