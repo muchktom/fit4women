@@ -6,8 +6,8 @@
    se na rozpracovaný web někdo dostal omylem. Kdo umí číst zdrojový kód,
    ověření obejde.
 
-   ZMĚNA HESLA:
-     printf '%s' 'NoveHeslo' | shasum -a 256
+   ZMĚNA HESLA (ověření je case-insensitive – hashuje se verze VELKÝMI písmeny):
+     printf '%s' 'NOVEHESLO' | shasum -a 256
    výsledný hash vlož do obou míst PASS_HASH níže.
 
    VYPNUTÍ BRÁNY (až půjde web naostro):
@@ -17,7 +17,7 @@
 <script>
   // Běží co nejdřív: pokud uživatel není ověřený, zamkne stránku.
   (function () {
-    var PASS_HASH = "1e778d2b970a9e0b627550e911ded0a26c4c34460a9fcf8a06a53a493e282f39";
+    var PASS_HASH = "cc4caa95a322e07fc894b2eead21d5ac4e05b2ecb33dfe867fc20bea71d7779b";
     try {
       if (sessionStorage.getItem("f4w-gate-ok") === PASS_HASH) return;
     } catch (e) {}
@@ -67,7 +67,7 @@
 
 <script>
   (function () {
-    var PASS_HASH = "1e778d2b970a9e0b627550e911ded0a26c4c34460a9fcf8a06a53a493e282f39";
+    var PASS_HASH = "cc4caa95a322e07fc894b2eead21d5ac4e05b2ecb33dfe867fc20bea71d7779b";
     var form = document.getElementById("gate-form");
     if (!form) return;
 
@@ -84,7 +84,8 @@
       var input = document.getElementById("gate-input");
       var err = document.getElementById("gate-err");
       try {
-        var hash = await sha256(input.value);
+        // Ověření nezávislé na velikosti písmen (hash je z verze VELKÝMI písmeny).
+        var hash = await sha256(input.value.toUpperCase());
         if (hash === PASS_HASH) {
           try { sessionStorage.setItem("f4w-gate-ok", PASS_HASH); } catch (e2) {}
           document.documentElement.classList.remove("gate-locked");
