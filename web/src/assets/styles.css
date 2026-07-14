@@ -314,7 +314,7 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
 .camp-hero{position:relative;border-radius:var(--radius);overflow:hidden;min-height:400px;color:#fff;
   display:flex;align-items:flex-end;box-shadow:var(--shadow);
   background:linear-gradient(180deg,rgba(58,31,61,.25),rgba(58,31,61,.78)),
-    url("/assets/images/areal-venku.jpeg");background-size:cover;background-position:center}
+    url("images/areal-venku.jpeg");background-size:cover;background-position:center}
 .camp-hero .cap{padding:34px 34px}
 .camp-hero .cap h2{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.6rem)}
 .camp-facts{display:flex;gap:34px;flex-wrap:wrap;margin-top:8px}
