@@ -7,6 +7,9 @@ module.exports = function (eleventyConfig) {
     new Date(d).toISOString().slice(0, 10)
   );
 
+  // Aktuální rok (pro copyright v patičce) – vyhodnotí se při buildu
+  eleventyConfig.addGlobalData("year", () => new Date().getFullYear());
+
   return {
     // Web běží na GitHub Pages jako projektový web (podadresář /fit4women/).
     // Až se přejde na vlastní doménu (fit4women.cz), změň na "/".

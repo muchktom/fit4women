@@ -30,7 +30,7 @@ module.exports = {
     facebook: "https://www.facebook.com/groups/1038345606504632/",
     whatsapp: "https://chat.whatsapp.com/HD25aLuCJSO6bPWJ5kEDDp", // ⚠️ ověřit platnost
     locations: [
-      { name: "Újezd nad Lesy", detail: "hřiště SportsField, ul. Polesná" },
+      { name: "Újezd nad Lesy", detail: "hřiště ul. Polesná" },
       { name: "Koloděje", detail: "tělocvična TJ Slavoj, V Lipách 135" },
     ],
   },
