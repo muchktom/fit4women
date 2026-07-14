@@ -8,6 +8,10 @@ module.exports = function (eleventyConfig) {
   );
 
   return {
+    // Web běží na GitHub Pages jako projektový web (podadresář /fit4women/).
+    // Až se přejde na vlastní doménu (fit4women.cz), změň na "/".
+    // Odkazy a assety proto používají v šablonách filtr `| url`.
+    pathPrefix: "/fit4women/",
     dir: {
       input: "src",
       includes: "_includes",

@@ -20,7 +20,7 @@
   <h3>{{ title }}</h3>
   <p>{{ text }}</p>
   <div class="price">{{ price }}</div>
-  <a class="more" href="{{ href }}">{{ linkLabel }} &rarr;</a>
+  <a class="more" href="{{ href | url }}">{{ linkLabel }} &rarr;</a>
 </div>
 {% endmacro %}
 
@@ -35,11 +35,11 @@
 {# --- Lokalita (foto + text + odkaz na rozvrh) --- #}
 {% macro loc(title, text, href, img, alt) %}
 <div class="loc">
-  <div class="photo"><img src="/assets/images/{{ img }}" alt="{{ alt }}" loading="lazy" decoding="async"></div>
+  <div class="photo"><img src="{{ ('/assets/images/' + img) | url }}" alt="{{ alt }}" loading="lazy" decoding="async"></div>
   <div class="body">
     <h3>{{ title }}</h3>
     <p>{{ text }}</p>
-    <a class="btn btn-primary btn-sm" href="{{ href }}">Zobrazit rozvrh &rarr;</a>
+    <a class="btn btn-primary btn-sm" href="{{ href | url }}">Zobrazit rozvrh &rarr;</a>
   </div>
 </div>
 {% endmacro %}
