@@ -1,0 +1,165 @@
+---
+layout: base.njk
+active: sluzby
+title: "Služby a rozvrh lekcí – cvičení pro ženy | FIT4WOMEN"
+description: "Individuální i skupinové lekce cvičení pro ženy v Újezdě nad Lesy a Kolodějích. Rozvrh (středa, pátek, neděle), jak lekce probíhá, co si vzít a přihlášení – první lekce zdarma."
+---
+{% import "components.njk" as c %}
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1>Lekce FIT4WOMEN</h1>
+    <p>Vyber si formát, který ti sedne — jedna na jednu, nebo v přátelské partě žen z okolí. S dětmi i bez.</p>
+  </div>
+</section>
+
+<!-- ===== INDIVIDUÁLNÍ ===== -->
+<section id="individualni" class="bg-white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">1 na 1</div>
+      <h2>Individuální lekce</h2>
+    </div>
+    <div class="prose">
+      <p>Individuální lekce jsou určeny ženám, které chtějí cvičit efektivně, bezpečně a s plnou pozorností trenérky. Každá lekce je přizpůsobena tvým cílům, aktuální kondici i tomu, jak se právě cítíš.</p>
+      <p>Společně se zaměříme na správnou techniku, funkční pohyb a postupné budování síly i kondice, aby ses ve svém těle cítila silná a sebevědomá.</p>
+      <ul>
+        <li><b>Cena:</b> 600 Kč / jednorázová lekce · 450 Kč / lekce v 2,5měsíčním plánu (10 lekcí)</li>
+        <li><b>Délka:</b> 60 minut</li>
+        <li><b>Místo:</b> Praha 9 – Koloděje (kobercový sál) · Praha 9 – Újezd nad Lesy (venkovní sportoviště) · u tebe doma</li>
+      </ul>
+      <p style="font-size:.9rem;color:var(--muted)">* Ke Kolodějím se připočítává 250 Kč za pronájem prostoru. ** Při lekci u tebe doma se připočítává doprava dle domluvy.</p>
+      <p class="center"><a class="btn btn-primary" href="#prihlaseni">Chci individuální lekci</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKUPINOVÉ / ROZVRH ===== -->
+<section id="skupinove" class="bg-sand">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ve skupině</div>
+      <h2>Skupinové lekce</h2>
+      <p>Venkovní lekce od jara do podzimu, v chladu a dešti se přesouváme do tělocvičny v Kolodějích.</p>
+    </div>
+    <div id="rozvrh" class="sched">
+      {{ c.scheduleCard("Středa", "17:00 – 18:00", "Funkční trénink",
+        "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
+        "Dynamičtější lekce. Buduje sílu, vytrvalost, stabilitu i mobilitu a zvyšuje metabolismus.", "yes") }}
+      {{ c.scheduleCard("Pátek", "9:00 – 10:00", "Core &amp; mobilita",
+        "dětské hřiště Oplanská, Újezd nad Lesy",
+        "Zdravé a silné tělo bez bolesti. Buduje sílu, stabilitu a mobilitu.", "yes") }}
+      {{ c.scheduleCard("Neděle", "17:00 – 18:00", "Silový trénink",
+        "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
+        "Silově zaměřená lekce s přidanou zátěží (jednoručky 1–5 kg). Síla, stabilita, mobilita, metabolismus.", "no") }}
+    </div>
+    <p class="center" style="margin-top:30px"><a class="btn btn-primary" href="#prihlaseni">Přihlásit se na lekci</a></p>
+  </div>
+</section>
+
+<!-- ===== JAK TO PROBÍHÁ ===== -->
+<section class="bg-white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Průběh lekce</div>
+      <h2>Jak cvičení probíhá</h2>
+    </div>
+    <div class="steps">
+      {{ c.step("Zahřejeme se", "Bez nutnosti poskoků — vždy ukážu mírnější i dynamičtější variantu.") }}
+      {{ c.step("Protáhneme se", "Připravíme tělo na pohyb, ať cvičíš bezpečně.") }}
+      {{ c.step("Posilujeme", "S vlastní vahou, odporovými gumičkami, overballem — v neděli i s činkami.") }}
+      {{ c.step("Zklidnění", "Závěrečná mobilita a protažení. Odejdeš s vyčištěnou hlavou.") }}
+    </div>
+
+    <div class="prose" style="margin-top:44px">
+      <h2>Pro koho je cvičení</h2>
+      <p>Cvičení je určené pro všechny ženy a mámy jakéhokoliv věku. Obtížnost se dá snadno regulovat — ukazuji různé varianty cviku a kdykoliv si můžeš odpočinout nebo upravit počet opakování.</p>
+      <ul>
+        <li>💪 Kondiční cvičení pro sílu, stabilitu a mobilitu</li>
+        <li>💪 Zpevnění středu těla (CORE)</li>
+        <li>💪 Podpora správného fungování těla bez bolesti</li>
+        <li>💪 Vhodné i k redukci váhy a jemnému budování svalové hmoty</li>
+      </ul>
+      <p><b>Po porodu:</b> maminky mohou cvičit po ukončeném 6. týdnu po porodu (u císařského řezu po 6 měsících), nebo jak určí tvůj lékař. ❗️Cvičení zohledňuje i rozestup břišních svalů (diastázu).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CO S SEBOU ===== -->
+<section class="bg-sand">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Než přijdeš</div>
+      <h2>Co si vzít s sebou</h2>
+    </div>
+    <div class="info-cols">
+      <div class="card">
+        <h3>🌳 Venku</h3>
+        <ul>
+          <li>Jakoukoliv podložku na cvičení</li>
+          <li>Pití</li>
+          <li>Sportovní obuv na ven</li>
+          <li>Potřeby pro dítě — klidně kolo, koloběžku, míč</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🏠 Uvnitř</h3>
+        <ul>
+          <li>Pití</li>
+          <li>Potřeby pro své dítě</li>
+          <li>Podložky jsou k dispozici (klidně si vezmi svoji)</li>
+          <li>Cvičíme bez bot — přezůvky netřeba</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PŘIHLÁŠENÍ ===== -->
+<section id="prihlaseni" class="bg-white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">První krok</div>
+      <h2>Přihlášení na trénink</h2>
+      <p>Napiš mi a domluvíme se. <b>První lekce je zdarma</b> — přijď nezávazně vyzkoušet, jak to u nás chodí.</p>
+    </div>
+    <form class="form" data-mailform data-to="{{ site.contact.email }}" data-subject="Přihláška na trénink FIT4WOMEN">
+      <div class="field">
+        <label for="jmeno">Jméno a příjmení</label>
+        <input id="jmeno" name="jmeno" data-label="Jméno" type="text" required>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" data-label="E-mail" type="email" required>
+        </div>
+        <div class="field">
+          <label for="telefon">Telefon</label>
+          <input id="telefon" name="telefon" data-label="Telefon" type="tel">
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="lekce">Vyber lekci</label>
+          <select id="lekce" name="lekce" data-label="Lekce" required>
+            <option value="" selected disabled>Vyber z možností…</option>
+            <option>Středa 17:00 – Funkční trénink</option>
+            <option>Pátek 9:00 – Core &amp; mobilita</option>
+            <option>Neděle 17:00 – Silový trénink</option>
+            <option>Individuální trénink</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="datum">Preferovaný termín</label>
+          <input id="datum" name="datum" data-label="Termín" type="date">
+        </div>
+      </div>
+      <div class="field">
+        <label for="pozn">Poznámka (nepovinné)</label>
+        <textarea id="pozn" name="pozn" data-label="Poznámka" placeholder="Např. jestli přijdeš s dětmi, na co se chceš zaměřit…"></textarea>
+      </div>
+      <button class="btn btn-primary submit" type="submit">Odeslat přihlášku</button>
+      <p class="hint">Odesláním se otevře tvůj e-mailový klient s předvyplněnou zprávou. Můžeš mi také rovnou napsat do <a href="{{ site.contact.whatsapp }}" target="_blank" rel="noopener">WhatsApp skupiny</a>.</p>
+    </form>
+  </div>
+</section>

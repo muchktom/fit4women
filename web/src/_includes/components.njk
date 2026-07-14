@@ -1,0 +1,94 @@
+{# =========================================================================
+   FIT4WOMEN – znovupoužitelné komponenty (Nunjucks makra)
+   Použití na stránce:  {% import "components.njk" as c %}
+   Pak např.:           {{ c.track("1 na 1", "Individuální trénink", "…", "od 450 Kč", "/sluzby/#individualni", "Individuální lekce") }}
+   ========================================================================= #}
+
+{# --- 3 hodnoty (Variabilita/Flexibilita/Výsledky). Ikona jde do těla přes {% call %}. --- #}
+{% macro value(title, text) %}
+<div class="value">
+  <div class="ic">{{ caller() if caller }}</div>
+  <h3>{{ title }}</h3>
+  <p>{{ text | safe }}</p>
+</div>
+{% endmacro %}
+
+{# --- Track (Individuální / Skupinové) --- #}
+{% macro track(tag, title, text, price, href, linkLabel) %}
+<div class="track">
+  <span class="tag">{{ tag }}</span>
+  <h3>{{ title }}</h3>
+  <p>{{ text }}</p>
+  <div class="price">{{ price }}</div>
+  <a class="more" href="{{ href }}">{{ linkLabel }} &rarr;</a>
+</div>
+{% endmacro %}
+
+{# --- Karta v sekci "Máma cvičí, děti si hrají" --- #}
+{% macro venueCard(title, text) %}
+<div class="card">
+  <h3>{{ title }}</h3>
+  <p>{{ text }}</p>
+</div>
+{% endmacro %}
+
+{# --- Lokalita (foto + text + odkaz na rozvrh) --- #}
+{% macro loc(title, text, href, img, alt) %}
+<div class="loc">
+  <div class="photo"><img src="/assets/images/{{ img }}" alt="{{ alt }}" loading="lazy" decoding="async"></div>
+  <div class="body">
+    <h3>{{ title }}</h3>
+    <p>{{ text }}</p>
+    <a class="btn btn-primary btn-sm" href="{{ href }}">Zobrazit rozvrh &rarr;</a>
+  </div>
+</div>
+{% endmacro %}
+
+{# --- Reference (placeholder citace) --- #}
+{% macro ref(quote, name, place) %}
+<div class="ref">
+  <div class="stars">★★★★★</div>
+  <blockquote>{{ quote }}</blockquote>
+  <div class="who"><div class="av">?</div><div><b>{{ name }}</b><span>{{ place }}</span></div></div>
+</div>
+{% endmacro %}
+
+{# --- FAQ položka. Odpověď (může obsahovat HTML) jde do těla přes {% call %}. --- #}
+{% macro faq(question, open=false) %}
+<details class="faq"{{ ' open' if open }}>
+  <summary>{{ question }}</summary>
+  <div class="a">{{ caller() if caller }}</div>
+</details>
+{% endmacro %}
+
+{# --- Krok "Jak cvičení probíhá" (číslo doplní CSS counter) --- #}
+{% macro step(title, text) %}
+<div class="step">
+  <h3>{{ title }}</h3>
+  <p>{{ text }}</p>
+</div>
+{% endmacro %}
+
+{# --- Karta rozvrhu; kids = "yes" | "no" --- #}
+{% macro scheduleCard(day, time, title, place, text, kids) %}
+<div class="sc">
+  <div class="top"><div class="day">{{ day }}</div><div class="time">{{ time }}</div></div>
+  <div class="body">
+    <h3>{{ title | safe }}</h3>
+    <div class="place">{{ place }}</div>
+    <p>{{ text }}</p>
+    {% if kids == "yes" %}<span class="kids-badge kids-yes">Možnost s dětmi</span>
+    {% else %}<span class="kids-badge kids-no">Bez dětí</span>{% endif %}
+  </div>
+</div>
+{% endmacro %}
+
+{# --- Cenová karta; feature=true zvýrazní (varianta s permanentkou) --- #}
+{% macro priceCard(name, sub, amount, per="/ lekce", feature=false) %}
+<div class="pc{{ ' feature' if feature }}">
+  <div class="name">{{ name }}</div>
+  <div class="sub">{{ sub }}</div>
+  <div class="amount">{{ amount }}</div>
+  <div class="per">{{ per }}</div>
+</div>
+{% endmacro %}

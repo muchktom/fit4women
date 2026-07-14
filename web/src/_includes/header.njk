@@ -1,0 +1,16 @@
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="/">FIT<b>4</b>WOMEN</a>
+    <ul class="menu" id="f4w-menu">
+      {%- for n in site.nav %}
+      <li><a class="{{ 'active' if n.key == active }}" href="{{ n.href }}">{{ n.label }}</a></li>
+      {%- endfor %}
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-sm" href="{{ site.primaryCta.href }}">{{ site.primaryCta.label }}</a>
+      <button class="burger" id="f4w-burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,54 @@
+---
+layout: base.njk
+active: cenik
+title: "Ceník lekcí – cvičení pro ženy | FIT4WOMEN"
+description: "Ceník cvičení pro ženy FIT4WOMEN – individuální, vnitřní i venkovní lekce, s permanentkou i bez. Újezd nad Lesy a Koloděje. První lekce zdarma."
+---
+{% import "components.njk" as c %}
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1>Jednoduché a férové ceny</h1>
+    <p>S jednou permanentkou můžeš oba prostory i typy tréninků libovolně kombinovat.</p>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="wrap">
+
+    <!-- Nízkoprahová nabídka -->
+    <div class="note-box center" style="margin-bottom:44px;background:var(--lav-100)">
+      <p style="font-family:var(--serif);font-size:1.3rem;color:var(--purple-700);margin:.2em 0">🎁 První lekce je zdarma</p>
+      <p>Přijď si nezávazně vyzkoušet, jak u nás cvičení probíhá — teprve pak se rozhoduj.</p>
+      <p style="margin-top:14px"><a class="btn btn-primary" href="/sluzby/#prihlaseni">Rezervovat první lekci zdarma</a></p>
+    </div>
+
+    <!-- Bez permanentky -->
+    <div class="price-block">
+      <h2>Cena bez permanentky</h2>
+      <div class="price-grid">
+        {{ c.priceCard("Venkovní lekce", "skupinová lekce venku, Újezd nad Lesy", "140 Kč") }}
+        {{ c.priceCard("Vnitřní lekce", "skupinová lekce v tělocvičně, Koloděje", "200 Kč") }}
+        {{ c.priceCard("Individuální lekce", "jen pro tebe, 60 minut", "600 Kč") }}
+      </div>
+    </div>
+
+    <!-- S permanentkou -->
+    <div class="price-block">
+      <h2>Cena s permanentkou</h2>
+      <div class="price-grid">
+        {{ c.priceCard("Venkovní lekce", "permanentka 1000 Kč, platnost 6 měsíců", "130 Kč", feature=true) }}
+        {{ c.priceCard("Vnitřní lekce", "permanentka 1000 Kč, platnost 6 měsíců", "190 Kč", feature=true) }}
+        {{ c.priceCard("Individuální lekce", "2,5měsíční plán (10 lekcí)", "450 Kč", feature=true) }}
+      </div>
+    </div>
+
+    <div class="note-box">
+      <p><b>Permanentka:</b> s jednou permanentkou (nominální hodnota 1000 Kč, platnost 6 měsíců) můžeš volně kombinovat venkovní lekce v Újezdě i vnitřní v Kolodějích.</p>
+      <p><b>Individuální lekce</b> trvá 60 minut a probíhá v Kolodějích, na venkovním sportovišti v Újezdě nebo u tebe doma.</p>
+      <p style="font-size:.9rem;color:var(--muted);margin-top:10px">* Ke Kolodějím se připočítává 250 Kč za pronájem prostoru. ** Při lekci u tebe doma se připočítává doprava dle domluvy.</p>
+    </div>
+
+    <p class="center" style="margin-top:40px"><a class="btn btn-primary" href="/sluzby/#prihlaseni">Přihlásit se na lekci</a></p>
+  </div>
+</section>
