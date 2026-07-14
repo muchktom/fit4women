@@ -217,7 +217,8 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
 /* Story (Kdo jsem) */
 .story{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:start}
 .story .portrait{position:relative}
-.story .portrait img{width:100%;height:auto;display:block}
+.story .portrait img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;display:block;
+  border:5px solid rgba(255,255,255,.9);box-shadow:0 24px 60px rgba(58,31,61,.25)}
 .story h2:first-child{margin-top:0}
 .edu{background:#fff;border:1px solid var(--taupe-200);border-radius:var(--radius);
   padding:24px 28px;box-shadow:var(--shadow-sm);margin:26px 0}
