@@ -92,3 +92,91 @@
   <div class="per">{{ per }}</div>
 </div>
 {% endmacro %}
+
+{# --- Hlavička podstránky (nadpis + text nahoře, na sandovém pozadí) --- #}
+{% macro pageHero(title, text) %}
+<section class="page-hero">
+  <div class="wrap">
+    <h1>{{ title }}</h1>
+    <p>{{ text | safe }}</p>
+  </div>
+</section>
+{% endmacro %}
+
+{# --- Záhlaví sekce (volitelný eyebrow nahoře + nadpis + volitelný text).
+     tight=true zmenší mezeru pod záhlavím (když hned pod ním něco jiného má vlastní odstup). --- #}
+{% macro sectionHead(title, text="", eyebrow="", tight=false) %}
+<div class="section-head{{ ' tight' if tight }}">
+  {% if eyebrow %}<div class="eyebrow">{{ eyebrow }}</div>{% endif %}
+  <h2>{{ title }}</h2>
+  {% if text %}<p>{{ text | safe }}</p>{% endif %}
+</div>
+{% endmacro %}
+
+{# --- Závěrečná fialová CTA sekce s úvodní větou, nadpisem a dvěma tlačítky --- #}
+{% macro finalCta(pre, title, primaryLabel, primaryHref, secondaryLabel, secondaryHref, id="") %}
+<section class="final"{% if id %} id="{{ id }}"{% endif %}>
+  <div class="wrap">
+    <p class="pre">{{ pre }}</p>
+    <h2>{{ title }}</h2>
+    <div class="row">
+      <a class="btn btn-light" href="{{ primaryHref | url }}">{{ primaryLabel }}</a>
+      <a class="btn btn-ghost" href="{{ secondaryHref | url }}">{{ secondaryLabel }}</a>
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{# --- Políčko formuláře (input). type = text | email | tel | date …
+     mailLabel = kratší název do e-mailu (nepovinné, jinak se použije label). --- #}
+{% macro formField(label, name, type="text", required=false, mailLabel="") %}
+<div class="field">
+  <label for="{{ name }}">{{ label }}</label>
+  <input id="{{ name }}" name="{{ name }}" data-label="{{ mailLabel or label }}" type="{{ type }}"{{ ' required' if required }}>
+</div>
+{% endmacro %}
+
+{# --- Víceřádkové políčko formuláře (textarea). mailLabel viz formField. --- #}
+{% macro formTextarea(label, name, placeholder="", required=false, mailLabel="") %}
+<div class="field">
+  <label for="{{ name }}">{{ label }}</label>
+  <textarea id="{{ name }}" name="{{ name }}" data-label="{{ mailLabel or label }}"{% if placeholder %} placeholder="{{ placeholder }}"{% endif %}{{ ' required' if required }}></textarea>
+</div>
+{% endmacro %}
+
+{# --- Dvě políčka vedle sebe. Dovnitř přes {% call %} vlož dva formField(...). --- #}
+{% macro formRow() %}
+<div class="row2">{{ caller() }}</div>
+{% endmacro %}
+
+{# --- Kontaktní karta (ikona + nadpis + popisek + odkaz/tlačítko).
+     Ikona (svg) jde do těla přes {% call %}. asButton=true zobrazí odkaz jako tlačítko. --- #}
+{% macro contactCard(title, text, href, linkLabel, asButton=false) %}
+<div class="cc">
+  <div class="ic">{{ caller() if caller }}</div>
+  <h3>{{ title }}</h3>
+  <div class="small">{{ text }}</div>
+  {% if asButton %}<a class="btn btn-primary btn-sm" href="{{ href }}" target="_blank" rel="noopener">{{ linkLabel }}</a>
+  {% else %}<a class="value" href="{{ href }}">{{ linkLabel }}</a>{% endif %}
+</div>
+{% endmacro %}
+
+{# --- Vložená Google mapa + odkaz "Otevřít v Google Maps". mapId je "cid" z odkazu na mapu. --- #}
+{% macro mapEmbed(title, mapId, label) %}
+<div class="map">
+  <h3>{{ title }}</h3>
+  <div class="frame">
+    <iframe loading="lazy" title="Mapa – {{ label }}" src="https://www.google.com/maps?cid={{ mapId }}&output=embed"></iframe>
+  </div>
+  <a class="link" href="https://www.google.com/maps?cid={{ mapId }}" target="_blank" rel="noopener">Otevřít v Google Maps &rarr;</a>
+</div>
+{% endmacro %}
+
+{# --- Karta v mřížce campu (nadpis + odrážky). Odrážky jdou do těla přes {% call %} jako <li>…</li>.
+     storno=true použije tečky místo fajfek (storno podmínky). --- #}
+{% macro campCard(title, storno=false) %}
+<div class="camp-card{{ ' storno' if storno }}">
+  <h3>{{ title }}</h3>
+  <ul>{{ caller() }}</ul>
+</div>
+{% endmacro %}

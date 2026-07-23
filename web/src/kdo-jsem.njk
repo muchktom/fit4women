@@ -4,13 +4,9 @@ active: kdo-jsem
 title: "Kdo jsem – Petra Váňová | FIT4WOMEN"
 description: "Petra Váňová – osobní a kondiční trenérka. Cvičení pro ženy FIT4WOMEN vedu v Újezdě nad Lesy od roku 2019. Moje cesta, vzdělání a naše komunita."
 ---
+{% import "components.njk" as c %}
 
-<section class="page-hero">
-  <div class="wrap">
-    <h1>Ahoj, jsem Petra Váňová</h1>
-    <p>Osobní a kondiční trenérka. Cvičení pro ženy FIT4WOMEN vedu v Újezdě nad Lesy od roku 2019.</p>
-  </div>
-</section>
+{{ c.pageHero("Ahoj, jsem Petra Váňová", "Osobní a kondiční trenérka. Cvičení pro ženy FIT4WOMEN vedu v Újezdě nad Lesy od roku 2019.") }}
 
 <section class="bg-white">
   <div class="wrap">
@@ -43,13 +39,8 @@ description: "Petra Váňová – osobní a kondiční trenérka. Cvičení pro 
   </div>
 </section>
 
-<section class="final">
-  <div class="wrap">
-    <p class="pre">Ráda tě provedu prvními kroky. Přijď si nezávazně vyzkoušet, jak u nás cvičení probíhá.</p>
-    <h2>Pojď to zkusit</h2>
-    <div class="row">
-      <a class="btn btn-light" href="{{ '/sluzby/#prihlaseni' | url }}">Přijď na první lekci zdarma</a>
-      <a class="btn btn-ghost" href="{{ '/kontakt/' | url }}">Napiš mi</a>
-    </div>
-  </div>
-</section>
+{{ c.finalCta(
+  "Ráda tě provedu prvními kroky. Přijď si nezávazně vyzkoušet, jak u nás cvičení probíhá.",
+  "Pojď to zkusit",
+  "Přijď na první lekci zdarma", "/sluzby/#prihlaseni",
+  "Napiš mi", "/kontakt/") }}

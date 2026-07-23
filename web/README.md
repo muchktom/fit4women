@@ -51,10 +51,23 @@ npm run build          # vygeneruje _site/ k nasazení
 - **Menu, kontakty a hlavní CTA** jsou v `src/_data/site.js`. Změníš telefon, Instagram nebo
   přidáš položku menu na **jednom místě** → promítne se na celý web.
 - **Styly** jen v `src/assets/styles.css`.
-- **Opakující se bloky** (karty, hodnoty, rozvrh, reference, ceny, FAQ) jsou **makra**
-  v `src/_includes/components.njk`. Na stránce se importují `{% import "components.njk" as c %}`
-  a volají jako `{{ c.track(...) }}` / `{% call c.faq("Otázka") %}Odpověď{% endcall %}`.
-  Změna vzhledu bloku = jedno místo.
+- **Opakující se bloky** (nadpisy stránek, záhlaví sekcí, karty, rozvrh, reference, ceny, FAQ,
+  políčka formulářů…) jsou **makra** v `src/_includes/components.njk`. Na stránce se importují
+  `{% import "components.njk" as c %}` a volají jako `{{ c.track(...) }}` /
+  `{% call c.faq("Otázka") %}Odpověď{% endcall %}`. Změna vzhledu bloku = jedno místo.
+
+  Nejčastěji používaná makra (viz komentáře přímo v `components.njk` pro všechny parametry):
+  - `c.pageHero(nadpis, text)` — světlá hlavička nahoře na podstránce.
+  - `c.sectionHead(nadpis, text, eyebrow)` — záhlaví sekce (nadpis + volitelný podnadpis a text).
+  - `c.finalCta(úvod, nadpis, popisekTlačítka1, odkaz1, popisekTlačítka2, odkaz2)` — závěrečná fialová sekce se dvěma tlačítky.
+  - `c.formField(popisek, name, typ, povinné)` a `c.formTextarea(...)` — políčko formuláře.
+  - `c.priceCard(...)`, `c.scheduleCard(...)`, `c.ref(...)`, `c.faq(...)` — cenové karty, rozvrh, reference, časté otázky.
+  - `c.contactCard(...)`, `c.mapEmbed(...)` — kontaktní karta a vložená mapa (stránka Kontakt).
+  - `c.campCard(...)` — karta v mřížce campu (stránka Víkend).
+
+  **Jak přidat novou stránku:** zkopíruj strukturu existující (např. `kontakt.njk`), použij stejná
+  makra pro hlavičku/záhlaví/CTA a doplň jen text v uvozovkách — HTML uvnitř sekcí se prakticky
+  nemusí upravovat.
 
 ### Přidání nové stránky (2 kroky)
 1. Vytvoř `src/nazev.njk` s front matter:

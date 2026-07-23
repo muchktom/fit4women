@@ -6,20 +6,12 @@ description: "Individuální i skupinové lekce cvičení pro ženy v Újezdě n
 ---
 {% import "components.njk" as c %}
 
-<section class="page-hero">
-  <div class="wrap">
-    <h1>Lekce FIT4WOMEN</h1>
-    <p>Vyber si formát, který ti sedne: jedna na jednu, nebo v přátelské partě žen z okolí. S dětmi i bez.</p>
-  </div>
-</section>
+{{ c.pageHero("Lekce FIT4WOMEN", "Vyber si formát, který ti sedne: jedna na jednu, nebo v přátelské partě žen z okolí. S dětmi i bez.") }}
 
 <!-- ===== INDIVIDUÁLNÍ ===== -->
 <section id="individualni" class="bg-white">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">1 na 1</div>
-      <h2>Individuální lekce</h2>
-    </div>
+    {{ c.sectionHead("Individuální lekce", "", "1 na 1") }}
     <div class="prose">
       <p>Individuální lekce jsou určeny ženám, které chtějí cvičit efektivně, bezpečně a s plnou pozorností trenérky. Každá lekce je přizpůsobena tvým cílům, aktuální kondici i tomu, jak se právě cítíš.</p>
       <p>Společně se zaměříme na správnou techniku, funkční pohyb a postupné budování síly i kondice, aby ses ve svém těle cítila silná a sebevědomá.</p>
@@ -37,11 +29,7 @@ description: "Individuální i skupinové lekce cvičení pro ženy v Újezdě n
 <!-- ===== SKUPINOVÉ / ROZVRH ===== -->
 <section id="skupinove" class="bg-sand">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Ve skupině</div>
-      <h2>Skupinové lekce</h2>
-      <p>Venkovní lekce od jara do podzimu, v chladu a dešti se přesouváme do tělocvičny v Kolodějích.</p>
-    </div>
+    {{ c.sectionHead("Skupinové lekce", "Venkovní lekce od jara do podzimu, v chladu a dešti se přesouváme do tělocvičny v Kolodějích.", "Ve skupině") }}
     <div id="rozvrh" class="sched">
       {{ c.scheduleCard("Středa", "17:00 – 18:00", "Funkční trénink",
         "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
@@ -60,10 +48,7 @@ description: "Individuální i skupinové lekce cvičení pro ženy v Újezdě n
 <!-- ===== JAK TO PROBÍHÁ ===== -->
 <section class="bg-white">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Průběh lekce</div>
-      <h2>Jak cvičení probíhá</h2>
-    </div>
+    {{ c.sectionHead("Jak cvičení probíhá", "", "Průběh lekce") }}
     <div class="steps">
       {{ c.step("Zahřejeme se", "Bez nutnosti poskoků, vždy ukážu mírnější i dynamičtější variantu.") }}
       {{ c.step("Protáhneme se", "Připravíme tělo na pohyb, ať cvičíš bezpečně.") }}
@@ -88,10 +73,7 @@ description: "Individuální i skupinové lekce cvičení pro ženy v Újezdě n
 <!-- ===== CO S SEBOU ===== -->
 <section class="bg-sand">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Než přijdeš</div>
-      <h2>Co si vzít s sebou</h2>
-    </div>
+    {{ c.sectionHead("Co si vzít s sebou", "", "Než přijdeš") }}
     <div class="info-cols">
       <div class="card">
         <h3>🌳 Venku</h3>
@@ -118,27 +100,14 @@ description: "Individuální i skupinové lekce cvičení pro ženy v Újezdě n
 <!-- ===== PŘIHLÁŠENÍ ===== -->
 <section id="prihlaseni" class="bg-white">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">První krok</div>
-      <h2>Přihlášení na trénink</h2>
-      <p>Napiš mi a domluvíme se. <b>První lekce je zdarma.</b> Přijď nezávazně vyzkoušet, jak to u nás chodí.</p>
-    </div>
+    {{ c.sectionHead("Přihlášení na trénink", "Napiš mi a domluvíme se. <b>První lekce je zdarma.</b> Přijď nezávazně vyzkoušet, jak to u nás chodí.", "První krok") }}
     <form class="form" data-mailform data-to="{{ site.contact.email }}" data-subject="Přihláška na trénink FIT4WOMEN">
-      <div class="field">
-        <label for="jmeno">Jméno a příjmení</label>
-        <input id="jmeno" name="jmeno" data-label="Jméno" type="text" required>
-      </div>
-      <div class="row2">
-        <div class="field">
-          <label for="email">E-mail</label>
-          <input id="email" name="email" data-label="E-mail" type="email" required>
-        </div>
-        <div class="field">
-          <label for="telefon">Telefon</label>
-          <input id="telefon" name="telefon" data-label="Telefon" type="tel">
-        </div>
-      </div>
-      <div class="row2">
+      {{ c.formField("Jméno a příjmení", "jmeno", "text", true, "Jméno") }}
+      {% call c.formRow() %}
+        {{ c.formField("E-mail", "email", "email", true) }}
+        {{ c.formField("Telefon", "telefon", "tel") }}
+      {% endcall %}
+      {% call c.formRow() %}
         <div class="field">
           <label for="lekce">Vyber lekci</label>
           <select id="lekce" name="lekce" data-label="Lekce" required>
@@ -149,15 +118,9 @@ description: "Individuální i skupinové lekce cvičení pro ženy v Újezdě n
             <option>Individuální trénink</option>
           </select>
         </div>
-        <div class="field">
-          <label for="datum">Preferovaný termín</label>
-          <input id="datum" name="datum" data-label="Termín" type="date">
-        </div>
-      </div>
-      <div class="field">
-        <label for="pozn">Poznámka (nepovinné)</label>
-        <textarea id="pozn" name="pozn" data-label="Poznámka" placeholder="Např. jestli přijdeš s dětmi, na co se chceš zaměřit…"></textarea>
-      </div>
+        {{ c.formField("Preferovaný termín", "datum", "date", false, "Termín") }}
+      {% endcall %}
+      {{ c.formTextarea("Poznámka (nepovinné)", "pozn", "Např. jestli přijdeš s dětmi, na co se chceš zaměřit…", false, "Poznámka") }}
       <button class="btn btn-primary submit" type="submit">Odeslat přihlášku</button>
       <p class="hint">Odesláním se otevře tvůj e-mailový klient s předvyplněnou zprávou. Můžeš mi také rovnou napsat do <a href="{{ site.contact.whatsapp }}" target="_blank" rel="noopener">WhatsApp skupiny</a>.</p>
     </form>

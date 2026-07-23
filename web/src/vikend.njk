@@ -4,13 +4,9 @@ active: vikend
 title: "Víkend s FIT4WOMEN – podzimní camp pro ženy | FIT4WOMEN"
 description: "Podzimní FIT4WOMEN camp 20.–22. 11. 2026 na Tvrzi Krassa v Podještědí. 4 tréninky, wellness, plná penze a skvělá parta žen. Rezervuj si místo."
 ---
+{% import "components.njk" as c %}
 
-<section class="page-hero">
-  <div class="wrap">
-    <h1>Podzimní FIT4WOMEN camp</h1>
-    <p>Udělej si víkend pro sebe: trénink, regenerace a parta žen na stejné vlně.</p>
-  </div>
-</section>
+{{ c.pageHero("Podzimní FIT4WOMEN camp", "Udělej si víkend pro sebe: trénink, regenerace a parta žen na stejné vlně.") }}
 
 <section class="bg-white">
   <div class="wrap">
@@ -30,70 +26,42 @@ description: "Podzimní FIT4WOMEN camp 20.–22. 11. 2026 na Tvrzi Krassa v Podj
     </div>
 
     <div class="camp-grid">
-      <div class="camp-card">
-        <h3>Program</h3>
-        <ul>
-          <li>4 intenzivní tréninkové lekce ve stylu FIT4WOMEN – síla, kondice a mobilita</li>
-          <li>Společné aktivity – vyzkoušíš nové věci, které ti ukážou, co všechno zvládneš</li>
-          <li>Seznamovací večer – poznej blíž holky, se kterými si sedneš</li>
-          <li>Wellness &amp; regenerace – finská sauna a vířivka pro zasloužený relax</li>
-        </ul>
-      </div>
-      <div class="camp-card">
-        <h3>Ubytování a strava</h3>
-        <ul>
-          <li>Stylové 2 až 3lůžkové pokoje s vlastním příslušenstvím</li>
-          <li>Plná penze – snídaně (teplý i studený bufet)</li>
-          <li>Oběd – polévka, hlavní chod, dezert</li>
-          <li>Večeře – teplá večeře, dezert</li>
-        </ul>
-      </div>
-      <div class="camp-card">
-        <h3>Co není v ceně</h3>
-        <ul>
-          <li>Doprava vlastní – před pobytem tě propojím ve skupině pro domluvu spolujízdy</li>
-          <li>Wellness navíc: 400 Kč / 2 hodiny / osoba</li>
-          <li>Bonus: možnost osobní konzultace s lektorkou (nutno rezervovat předem)</li>
-        </ul>
-      </div>
-      <div class="camp-card storno">
-        <h3>Storno podmínky</h3>
-        <ul>
-          <li>Do 30. 9. 2026: při zrušení vráceno 50 % z celkové ceny</li>
-          <li>Od 1. 10. do 31. 10. 2026: vráceno 25 % z celkové ceny</li>
-          <li>Od 1. 11. 2026: částka se nevrací (lze za sebe najít náhradu)</li>
-        </ul>
-      </div>
+      {% call c.campCard("Program") %}
+        <li>4 intenzivní tréninkové lekce ve stylu FIT4WOMEN – síla, kondice a mobilita</li>
+        <li>Společné aktivity – vyzkoušíš nové věci, které ti ukážou, co všechno zvládneš</li>
+        <li>Seznamovací večer – poznej blíž holky, se kterými si sedneš</li>
+        <li>Wellness &amp; regenerace – finská sauna a vířivka pro zasloužený relax</li>
+      {% endcall %}
+      {% call c.campCard("Ubytování a strava") %}
+        <li>Stylové 2 až 3lůžkové pokoje s vlastním příslušenstvím</li>
+        <li>Plná penze – snídaně (teplý i studený bufet)</li>
+        <li>Oběd – polévka, hlavní chod, dezert</li>
+        <li>Večeře – teplá večeře, dezert</li>
+      {% endcall %}
+      {% call c.campCard("Co není v ceně") %}
+        <li>Doprava vlastní – před pobytem tě propojím ve skupině pro domluvu spolujízdy</li>
+        <li>Wellness navíc: 400 Kč / 2 hodiny / osoba</li>
+        <li>Bonus: možnost osobní konzultace s lektorkou (nutno rezervovat předem)</li>
+      {% endcall %}
+      {% call c.campCard("Storno podmínky", true) %}
+        <li>Do 30. 9. 2026: při zrušení vráceno 50 % z celkové ceny</li>
+        <li>Od 1. 10. do 31. 10. 2026: vráceno 25 % z celkové ceny</li>
+        <li>Od 1. 11. 2026: částka se nevrací (lze za sebe najít náhradu)</li>
+      {% endcall %}
     </div>
   </div>
 </section>
 
 <section id="rezervace" class="bg-sand">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Rezervace</div>
-      <h2>Zarezervuj si místo včas</h2>
-      <p>Rezervaci ti potvrdím e-mailem.</p>
-    </div>
+    {{ c.sectionHead("Zarezervuj si místo včas", "Rezervaci ti potvrdím e-mailem.", "Rezervace") }}
     <form class="form" data-mailform data-to="{{ site.contact.email }}" data-subject="Rezervace – Podzimní FIT4WOMEN camp 20.–22. 11. 2026">
-      <div class="field">
-        <label for="jmeno">Jméno a příjmení</label>
-        <input id="jmeno" name="jmeno" data-label="Jméno" type="text" required>
-      </div>
-      <div class="row2">
-        <div class="field">
-          <label for="email">E-mail</label>
-          <input id="email" name="email" data-label="E-mail" type="email" required>
-        </div>
-        <div class="field">
-          <label for="telefon">Telefonní číslo</label>
-          <input id="telefon" name="telefon" data-label="Telefon" type="tel" required>
-        </div>
-      </div>
-      <div class="field">
-        <label for="pozn">Poznámka</label>
-        <textarea id="pozn" name="pozn" data-label="Poznámka" placeholder="Např. s kým chceš na pokoji, dotazy k programu…"></textarea>
-      </div>
+      {{ c.formField("Jméno a příjmení", "jmeno", "text", true, "Jméno") }}
+      {% call c.formRow() %}
+        {{ c.formField("E-mail", "email", "email", true) }}
+        {{ c.formField("Telefonní číslo", "telefon", "tel", true, "Telefon") }}
+      {% endcall %}
+      {{ c.formTextarea("Poznámka", "pozn", "Např. s kým chceš na pokoji, dotazy k programu…") }}
       <button class="btn btn-primary submit" type="submit">Rezervovat místo</button>
       <p class="hint">Odesláním se otevře tvůj e-mailový klient s předvyplněnou zprávou.</p>
     </form>

@@ -91,11 +91,7 @@ description: "Skupinové i individuální cvičení pro ženy v Újezdě nad Les
 <!-- ============ LOKALITY ============ -->
 <section class="bg-white">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Kde cvičíme</div>
-      <h2>Lokality</h2>
-      <p>Dvě místa, jedna permanentka. Vyber si podle počasí i nálady.</p>
-    </div>
+    {{ c.sectionHead("Lokality", "Dvě místa, jedna permanentka. Vyber si podle počasí i nálady.", "Kde cvičíme") }}
     <div class="locs">
       {{ c.loc("Újezd nad Lesy", "Venkovní lekce na čerstvém vzduchu, hřiště SportsField (ul. Polesná). Ideální pro cvičení s dětmi na hřišti.", "/sluzby/#rozvrh", "lekce-hriste.jpeg", "Venkovní hřiště SportsField v Újezdě nad Lesy") }}
       {{ c.loc("Koloděje", "Zázemí moderní tělocvičny (TJ Slavoj, V Lipách 135). Bezpečný kobercový sál s prostorem i pro děti.", "/sluzby/#rozvrh", "lekce-interier-2.png", "Tělocvična TJ Slavoj v Kolodějích") }}
@@ -106,9 +102,7 @@ description: "Skupinové i individuální cvičení pro ženy v Újezdě nad Les
 <!-- ============ REFERENCE ============ -->
 <section class="bg-lav">
   <div class="wrap">
-    <div class="section-head">
-      <h2>Co o FIT4WOMEN říkají klientky</h2>
-    </div>
+    {{ c.sectionHead("Co o FIT4WOMEN říkají klientky") }}
     <div class="ref-carousel" data-carousel>
       <div class="ref-carousel-track">
         {{ c.ref("„Lekce jsou úžasné. A kromě cvičení mi neskutečně změnily život k lepšímu, protože mám díky nim v Újezdě a okolí spoustu skvělých kamarádek a známých. Bez téhle komunity by bylo mateřství úplně jiné, osamělé a těžší, takže moc díky, Peťo. A všem doporučuji, nebojte se to zkusit, příjemně se rozhýbat a setkat se s fajn ženami.", "Gabča Č.", "Újezd nad Lesy") }}
@@ -129,10 +123,7 @@ description: "Skupinové i individuální cvičení pro ženy v Újezdě nad Les
 <!-- ============ FAQ ============ -->
 <section class="bg-sand">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Než přijdeš</div>
-      <h2>Časté otázky</h2>
-    </div>
+    {{ c.sectionHead("Časté otázky", "", "Než přijdeš") }}
     <div class="faq-wrap">
       {% call c.faq("Musím být fit, abych mohla přijít?", true) %}Vůbec ne. Obtížnost snadno regulujeme, u každého cviku ukazuji mírnější i dynamičtější variantu. Kdykoliv si můžeš odpočinout nebo upravit počet opakování. Cvičení je pro ženy a mámy jakéhokoliv věku.{% endcall %}
       {% call c.faq("Co když tam nikoho neznám?") %}To je úplně běžné, spousta z nás se sem přistěhovala a nikoho neznala. FIT4WOMEN je hlavně parta: scházíme se i mimo cvičení, na kafe, procházky s kočárkem i večer bez dětí. Rychle zapadneš.{% endcall %}
@@ -144,13 +135,9 @@ description: "Skupinové i individuální cvičení pro ženy v Újezdě nad Les
 </section>
 
 <!-- ============ FINÁLNÍ CTA ============ -->
-<section class="final" id="zacit">
-  <div class="wrap">
-    <p class="pre">Ten první krok bývá nejtěžší. Ale nejsi na to sama. Provedu tě jím a budu tě podporovat na každém metru tvojí cesty.</p>
-    <h2>Začni svou proměnu ještě dnes</h2>
-    <div class="row">
-      <a class="btn btn-light" href="{{ '/sluzby/#prihlaseni' | url }}">Přijď na první lekci zdarma</a>
-      <a class="btn btn-ghost" href="{{ '/kontakt/' | url }}">Domluvit si konzultaci</a>
-    </div>
-  </div>
-</section>
+{{ c.finalCta(
+  "Ten první krok bývá nejtěžší. Ale nejsi na to sama. Provedu tě jím a budu tě podporovat na každém metru tvojí cesty.",
+  "Začni svou proměnu ještě dnes",
+  "Přijď na první lekci zdarma", "/sluzby/#prihlaseni",
+  "Domluvit si konzultaci", "/kontakt/",
+  "zacit") }}
