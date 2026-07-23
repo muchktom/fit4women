@@ -1,15 +1,25 @@
 /* ==========================================================================
    FIT4WOMEN – sdílené styly celého webu (jediný zdroj pravdy)
-   Paleta: fialová / bílá / šedo-hnědá (taupe)
+   Paleta: fialová (přesně dle loga, ~270°) / bílá / šedo-hnědá (taupe) + akcenty z loga (růžová/tyrkysová/zlatá)
    Používá se na všech stránkách přes <link rel="stylesheet" href="assets/styles.css">
    ========================================================================== */
 :root{
-  --plum-900:#3a1f3d;      /* skoro černá švestková – footer, tmavé nadpisy */
+  --plum-900:#2e1f3d;      /* nejtmavší krok fialové z loga (stejný odstín ~270°, jen ztmavený) – footer, tmavé nadpisy */
   --purple-700:#774bad;    /* hluboká fialová – tmavý pruh */
   --purple-600:#8d54cc;
   --purple-500:#9755d1;    /* primární tlačítka – světlá, sytá ametystová */
   --purple-400:#be8ce9;
   --lav-100:#f2ebf6;       /* jemné fialové pozadí */
+  /* Akcentové barvy z loga (vodová skvrna: růžová → fialová → tyrkysová → zlatá) */
+  --pink-500:#d9469b;
+  --pink-400:#e784bf;
+  --pink-100:#faeaf3;
+  --teal-500:#249c8c;
+  --teal-400:#5cc2b3;
+  --teal-100:#e2f5f1;
+  --gold-500:#c99a3d;
+  --gold-400:#e0b862;
+  --gold-100:#faf1de;
   --taupe-700:#6f6154;     /* šedo-hnědá – text, ikony */
   --taupe-300:#c9bcae;
   --taupe-200:#e7ddd1;     /* světle hnědé karty / okraje */
@@ -19,10 +29,10 @@
   --muted:#6b6470;
   --ok:#3f7d4e;
   --radius:14px;
-  --shadow:0 10px 30px rgba(58,31,61,.10);
-  --shadow-sm:0 4px 14px rgba(58,31,61,.08);
-  --serif:'DM Serif Display',Georgia,'Times New Roman',serif;
-  --sans:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --shadow:0 10px 30px rgba(46,31,61,.10);
+  --shadow-sm:0 4px 14px rgba(46,31,61,.08);
+  --serif:'League Spartan',Georgia,'Times New Roman',serif;
+  --sans:Calibri,Carlito,'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   --wrap:1140px;
 }
 *{box-sizing:border-box}
@@ -59,8 +69,8 @@ p{text-wrap:pretty}
 header.site{position:sticky;top:0;z-index:50;background:rgba(250,246,241,.92);
   backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--taupe-200)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:72px}
-.brand{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:.02em;color:var(--plum-900)}
-.brand b{color:var(--purple-600)}
+header.site .brand{position:relative;display:block;width:64px;height:100%;flex:none}
+header.site .brand img{position:absolute;left:0;top:6px;height:96px;width:auto;max-width:none;display:block}
 .menu{display:flex;align-items:center;gap:22px;list-style:none;margin:0;padding:0}
 .menu a{font-size:.86rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;
   color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap}
@@ -71,8 +81,12 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(250,246,241,.92);
 
 /* ---------- Hero (domovská) – split: text + kruhové fotky ---------- */
 .hero{position:relative;color:#fff;overflow:hidden;padding:0;
-  background:radial-gradient(120% 120% at 85% 10%,var(--purple-600) 0%,var(--purple-700) 45%,var(--plum-900) 100%)}
-.hero::before{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
+  background:
+    radial-gradient(46% 60% at 96% 4%,var(--pink-500) 0%,transparent 68%),
+    radial-gradient(50% 62% at 84% 92%,var(--gold-400) 0%,transparent 66%),
+    radial-gradient(42% 55% at 46% 100%,var(--teal-400) 0%,transparent 68%),
+    radial-gradient(120% 120% at 85% 10%,var(--purple-600) 0%,var(--purple-700) 45%,var(--plum-900) 100%)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.55;pointer-events:none;
   background:radial-gradient(40% 55% at 12% 90%,rgba(154,107,189,.5),transparent 70%)}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;
   gap:48px;align-items:center;min-height:min(90vh,760px);padding-top:56px;padding-bottom:56px}
@@ -82,18 +96,24 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(250,246,241,.92);
 .hero h1{font-family:var(--sans);font-weight:800;text-transform:uppercase;
   font-size:clamp(2.4rem,5.6vw,4.1rem);line-height:1.08;letter-spacing:0;margin:0 0 22px}
 .hero p.lead{font-size:1.12rem;line-height:1.55;max-width:460px;margin:0 0 28px;color:#efe3f5}
-.hero-badge{display:inline-flex;align-items:center;gap:.55em;background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:700;font-size:.8rem;
+.hero-badge{display:inline-flex;align-items:center;gap:.55em;background:rgba(224,184,98,.2);
+  border:1px solid rgba(224,184,98,.55);color:#fff;font-weight:700;font-size:.8rem;
   letter-spacing:.06em;text-transform:uppercase;padding:.55em 1.15em;border-radius:999px;margin-bottom:26px}
-.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#fff;
-  box-shadow:0 0 0 4px rgba(255,255,255,.25)}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--gold-400);
+  box-shadow:0 0 0 4px rgba(224,184,98,.3)}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
 .hero-media{position:relative;height:100%;min-height:420px}
-.hero-photo{position:absolute;height:auto;border-radius:50%;object-fit:cover;
-  border:5px solid rgba(255,255,255,.9);box-shadow:0 24px 60px rgba(58,31,61,.45)}
+.hero-media::before{content:"";position:absolute;inset:-14%;z-index:0;pointer-events:none;filter:blur(34px);
+  background:
+    radial-gradient(40% 40% at 20% 16%,rgba(217,70,155,.85),transparent 72%),
+    radial-gradient(44% 44% at 80% 28%,rgba(190,140,233,.8),transparent 72%),
+    radial-gradient(42% 42% at 74% 80%,rgba(92,194,179,.8),transparent 72%),
+    radial-gradient(38% 38% at 16% 84%,rgba(224,184,98,.85),transparent 72%)}
+.hero-photo{position:absolute;z-index:1;height:auto;border-radius:50%;object-fit:cover;
+  border:5px solid rgba(255,255,255,.9);box-shadow:0 24px 60px rgba(46,31,61,.45)}
 .hero-photo.main{width:min(76%,380px);aspect-ratio:1;top:50%;left:50%;transform:translate(-52%,-50%)}
-.hero-photo.sub{width:min(38%,180px);aspect-ratio:1;right:2%;bottom:4%;border-width:4px;
-  box-shadow:0 16px 40px rgba(58,31,61,.4)}
+.hero-photo.sub{width:min(38%,180px);aspect-ratio:1;right:9%;bottom:11%;border-width:4px;
+  box-shadow:0 16px 40px rgba(46,31,61,.4)}
 
 /* ---------- Page hero (podstránky) – lehká hlavička, obsah napřed ---------- */
 .page-hero{position:relative;text-align:center;padding:66px 0 34px;background:var(--sand-50)}
@@ -121,6 +141,7 @@ section{padding:74px 0}
 .track .tag{align-self:flex-start;background:var(--lav-100);color:var(--purple-600);
   font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   padding:.4em .9em;border-radius:999px;margin-bottom:16px}
+.track:nth-child(2) .tag{background:var(--pink-100);color:var(--pink-500)}
 .track h3{font-size:1.5rem;color:var(--plum-900);margin:0 0 10px}
 .track p{color:var(--muted);margin:0 0 20px;flex:1}
 .track .price{font-weight:700;color:var(--taupe-700);font-family:var(--sans);font-size:.9rem;margin-bottom:16px}
@@ -136,6 +157,9 @@ section{padding:74px 0}
 .values{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;text-align:center}
 .value .ic{width:64px;height:64px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;
   background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3)}
+.value:nth-child(1) .ic{background:rgba(217,70,155,.28);border-color:rgba(217,70,155,.45)}
+.value:nth-child(2) .ic{background:rgba(224,184,98,.28);border-color:rgba(224,184,98,.45)}
+.value:nth-child(3) .ic{background:rgba(92,194,179,.28);border-color:rgba(92,194,179,.45)}
 .value h3{font-size:1.3rem;letter-spacing:.06em;margin:0 0 8px;text-transform:uppercase}
 .value p{color:#fff;margin:0;font-size:.98rem}
 svg.icon{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -147,7 +171,7 @@ svg.icon{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.8;stroke-li
 .kids-photo{position:absolute;height:auto;border-radius:50%;object-fit:cover;box-shadow:var(--shadow)}
 .kids-photo.main{width:78%;aspect-ratio:1;top:0;left:0;border:6px solid var(--white)}
 .kids-photo.sub{width:46%;aspect-ratio:1;right:0;bottom:0;border:6px solid var(--white)}
-.kids-copy .tag{display:inline-block;background:var(--lav-100);color:var(--purple-600);
+.kids-copy .tag{display:inline-block;background:var(--teal-100);color:var(--teal-500);
   font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   padding:.45em .95em;border-radius:999px;margin-bottom:16px}
 .kids-copy h2{font-size:clamp(1.8rem,3.8vw,2.6rem);color:var(--plum-900);margin:0 0 14px}
@@ -156,6 +180,8 @@ svg.icon{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.8;stroke-li
 .benefits li{display:flex;gap:14px;align-items:flex-start}
 .benefits .bi{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
   background:var(--lav-100);font-size:1.15rem}
+.benefits li:nth-child(1) .bi{background:var(--teal-100)}
+.benefits li:nth-child(2) .bi{background:var(--gold-100)}
 .benefits b{display:block;color:var(--plum-900);margin-bottom:2px;font-size:1.02rem}
 .benefits li>div{color:var(--muted);font-size:.96rem;line-height:1.55}
 
@@ -217,8 +243,7 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
 /* Story (Kdo jsem) */
 .story{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:start}
 .story .portrait{position:relative}
-.story .portrait img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;display:block;
-  border:5px solid rgba(255,255,255,.9);box-shadow:0 24px 60px rgba(58,31,61,.25)}
+.story .portrait img{width:100%;aspect-ratio:1;object-fit:contain;display:block}
 .story h2:first-child{margin-top:0}
 .edu{background:#fff;border:1px solid var(--taupe-200);border-radius:var(--radius);
   padding:24px 28px;box-shadow:var(--shadow-sm);margin:26px 0}
@@ -250,6 +275,10 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
 .step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:38px;height:38px;
   border-radius:50%;background:var(--lav-100);color:var(--purple-600);font-family:var(--serif);
   font-size:1.1rem;font-weight:700;margin-bottom:14px}
+.step:nth-child(1)::before{background:var(--lav-100);color:var(--purple-600)}
+.step:nth-child(2)::before{background:var(--pink-100);color:var(--pink-500)}
+.step:nth-child(3)::before{background:var(--teal-100);color:var(--teal-500)}
+.step:nth-child(4)::before{background:var(--gold-100);color:var(--gold-500)}
 .step h3{margin:0 0 6px;font-size:1.1rem;color:var(--plum-900)}
 .step p{margin:0;color:var(--muted);font-size:.92rem}
 
@@ -302,6 +331,12 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
   background:var(--lav-100)}
 .cc .ic svg{width:24px;height:24px;stroke:var(--purple-600);fill:none;stroke-width:1.8}
 .cc h3{margin:0 0 4px;color:var(--purple-600);font-size:1.2rem}
+.cc:nth-child(2) .ic{background:var(--pink-100)}
+.cc:nth-child(2) .ic svg{stroke:var(--pink-500)}
+.cc:nth-child(2) h3{color:var(--pink-500)}
+.cc:nth-child(3) .ic{background:var(--teal-100)}
+.cc:nth-child(3) .ic svg{stroke:var(--teal-500)}
+.cc:nth-child(3) h3{color:var(--teal-500)}
 .cc .small{font-size:.85rem;color:var(--muted);margin-bottom:10px}
 .cc a.value,.cc .value{font-weight:700;color:var(--plum-900);word-break:break-word}
 .maps{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:50px}
@@ -310,11 +345,14 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
   border-bottom:1px solid var(--taupe-200)}
 .map .frame{position:relative;padding-bottom:66%;height:0}
 .map .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map .link{display:block;padding:14px 22px;background:#fff;color:var(--plum-900);font-weight:700;
+  font-size:.92rem;text-decoration:none;border-top:1px solid var(--taupe-200)}
+.map .link:hover{text-decoration:underline}
 
 /* ---------- Camp (Víkend) ---------- */
 .camp-hero{position:relative;border-radius:var(--radius);overflow:hidden;min-height:400px;color:#fff;
   display:flex;align-items:flex-end;box-shadow:var(--shadow);
-  background:linear-gradient(180deg,rgba(58,31,61,.25),rgba(58,31,61,.78)),
+  background:linear-gradient(180deg,rgba(46,31,61,.25),rgba(46,31,61,.78)),
     url("images/areal-venku.jpeg");background-size:cover;background-position:center}
 .camp-hero .cap{padding:34px 34px}
 .camp-hero .cap h2{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.6rem)}
@@ -332,7 +370,9 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
 .camp-card.storno li::before{content:"•";color:var(--taupe-700)}
 
 /* ---------- Footer ---------- */
-footer.site{background:var(--plum-900);color:#e8dcec;padding:56px 0 26px}
+footer.site{background:var(--plum-900);color:#e8dcec;padding:56px 0 26px;position:relative}
+footer.site::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--pink-500),var(--purple-500),var(--teal-500),var(--gold-400))}
 .foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;align-items:start}
 .foot-col a{color:#e8dcec}
 .foot-col a:hover{color:#fff;text-decoration:underline}
@@ -341,7 +381,8 @@ footer.site{background:var(--plum-900);color:#e8dcec;padding:56px 0 26px}
 .foot-head{text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;color:var(--taupe-300);
   margin:6px 0 14px;font-family:var(--sans);font-weight:700}
 /* Levý (brand) sloupec */
-.foot .brand{color:#fff;font-size:1.4rem;margin-bottom:12px}
+.foot .brand{margin-bottom:14px}
+.foot .brand img{height:64px;width:auto}
 .foot-lead{margin:0;color:#fff;font-family:var(--serif);font-size:1.15rem;line-height:1.35}
 .foot-lead span{display:block;font-family:var(--sans);font-size:.88rem;color:var(--taupe-300);margin-top:3px}
 /* Spodní copyright lišta se socials na opačné straně */

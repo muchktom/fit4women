@@ -1,6 +1,8 @@
 <header class="site">
   <div class="wrap nav">
-    <a class="brand" href="{{ '/' | url }}">FIT<b>4</b>WOMEN</a>
+    <a class="brand" href="{{ '/' | url }}">
+      <img src="{{ '/assets/images/logo-mark.png' | url }}" width="480" height="466" alt="FIT4WOMEN">
+    </a>
     <ul class="menu" id="f4w-menu">
       {%- for n in site.nav %}
       <li><a class="{{ 'active' if n.key == active }}" href="{{ n.href | url }}">{{ n.label }}</a></li>
