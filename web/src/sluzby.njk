@@ -100,29 +100,9 @@ description: "Individuální i skupinové lekce cvičení pro ženy v Újezdě n
 <!-- ===== PŘIHLÁŠENÍ ===== -->
 <section id="prihlaseni" class="bg-white">
   <div class="wrap">
-    {{ c.sectionHead("Přihlášení na trénink", "Napiš mi a domluvíme se. <b>První lekce je zdarma.</b> Přijď nezávazně vyzkoušet, jak to u nás chodí.", "První krok") }}
-    <form class="form" data-mailform data-to="{{ site.contact.email }}" data-subject="Přihláška na trénink FIT4WOMEN">
-      {{ c.formField("Jméno a příjmení", "jmeno", "text", true, "Jméno") }}
-      {% call c.formRow() %}
-        {{ c.formField("E-mail", "email", "email", true) }}
-        {{ c.formField("Telefon", "telefon", "tel") }}
-      {% endcall %}
-      {% call c.formRow() %}
-        <div class="field">
-          <label for="lekce">Vyber lekci</label>
-          <select id="lekce" name="lekce" data-label="Lekce" required>
-            <option value="" selected disabled>Vyber z možností…</option>
-            <option>Středa 17:00 – Funkční trénink</option>
-            <option>Pátek 9:00 – Core &amp; mobilita</option>
-            <option>Neděle 17:00 – Silový trénink</option>
-            <option>Individuální trénink</option>
-          </select>
-        </div>
-        {{ c.formField("Preferovaný termín", "datum", "date", false, "Termín") }}
-      {% endcall %}
-      {{ c.formTextarea("Poznámka (nepovinné)", "pozn", "Např. jestli přijdeš s dětmi, na co se chceš zaměřit…", false, "Poznámka") }}
-      <button class="btn btn-primary submit" type="submit">Odeslat přihlášku</button>
-      <p class="hint">Odesláním se otevře tvůj e-mailový klient s předvyplněnou zprávou. Můžeš mi také rovnou napsat do <a href="{{ site.contact.whatsapp }}" target="_blank" rel="noopener">WhatsApp skupiny</a>.</p>
-    </form>
+    {{ c.sectionHead("Přihlášení na trénink", "Vyplň krátký formulář a domluvíme se. <b>První lekce je zdarma.</b> Přijď nezávazně vyzkoušet, jak to u nás chodí.", "První krok") }}
+    <div class="gform-embed">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbi4lm9Xdj7eWY97glVuGDADxA8fW77H9j0EyjRXa-FE3BjA/viewform?embedded=true" width="640" height="1280" frameborder="0" marginheight="0" marginwidth="0">Načítání…</iframe>
+    </div>
   </div>
 </section>
