@@ -1,6 +1,7 @@
 module.exports = function (eleventyConfig) {
   // Statické soubory (CSS, JS, obrázky) kopírujeme 1:1 do výstupu
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy("src/CNAME");
 
   // Datum ve formátu YYYY-MM-DD (pro <lastmod> v sitemap.xml)
   eleventyConfig.addFilter("isoDate", (d) =>
@@ -11,10 +12,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData("year", () => new Date().getFullYear());
 
   return {
-    // Web běží na GitHub Pages jako projektový web (podadresář /fit4women/).
-    // Až se přejde na vlastní doménu (fit4women.cz), změň na "/".
+    // Web běží na vlastní doméně (www.fit4women.cz), proto kořenový prefix.
     // Odkazy a assety proto používají v šablonách filtr `| url`.
-    pathPrefix: "/fit4women/",
+    pathPrefix: "/",
     dir: {
       input: "src",
       includes: "_includes",
