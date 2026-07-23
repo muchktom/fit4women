@@ -8,23 +8,26 @@ description: "Skupinové i individuální cvičení pro ženy v Újezdě nad Les
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <div class="hero-sub">S dětmi i bez nich. Tvoje cesta k síle začíná tady.</div>
-      <h1>Cvičení pro ženy bez limitů</h1>
-      <p class="lead">Nečekej, až budeš mít čas. Udělej si ho. Tvoje tělo ti poděkuje.</p>
-      <div class="hero-badge"><span class="dot"></span> První lekce zdarma</div>
-      <div class="hero-cta">
-        <a class="btn btn-light" href="{{ '/sluzby/#prihlaseni' | url }}">Chci začít</a>
-        <a class="btn btn-ghost" href="#jak-to-probiha">Zjistit více</a>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-sub">S dětmi i bez dětí. Tvoje cesta k síle začíná tady.</div>
+        <h1>FIT4WOMEN</h1>
+        <p class="lead">Cvičení pro ženy bez limitů</p>
+        <div class="hero-badge"><span class="dot"></span> První lekce zdarma</div>
+        <div class="hero-cta">
+          <a class="btn btn-light" href="{{ '/sluzby/#prihlaseni' | url }}">Chci začít</a>
+          <a class="btn btn-ghost" href="#jak-to-probiha">Zjistit více</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img class="hero-photo main" src="{{ '/assets/images/cviceni-plaz-2.jpeg' | url }}" width="380" height="380"
+             alt="Trenérka Petra při silovém cviku">
+        <img class="hero-photo sub" src="{{ '/assets/images/lekce-park-detail.png' | url }}" width="180" height="180"
+             alt="Maminka cvičí v parku, miminko leží na podložce těsně pod ní">
       </div>
     </div>
-    <div class="hero-media">
-      <img class="hero-photo main" src="{{ '/assets/images/cviceni-plaz-2.jpeg' | url }}" width="380" height="380"
-           alt="Trenérka Petra při silovém cviku">
-      <img class="hero-photo sub" src="{{ '/assets/images/lekce-park-detail.png' | url }}" width="180" height="180"
-           alt="Maminka cvičí v parku, miminko leží na podložce těsně pod ní">
-    </div>
+    <p class="hero-tagline">Nečekej, až budeš mít čas. Udělej si ho. Tvoje tělo ti poděkuje.</p>
   </div>
 </section>
 
@@ -100,20 +103,26 @@ description: "Skupinové i individuální cvičení pro ženy v Újezdě nad Les
   </div>
 </section>
 
-<!-- ============ REFERENCE (DOPLNIT reálné) ============ -->
+<!-- ============ REFERENCE ============ -->
 <section class="bg-lav">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Co říkají ženy</div>
-      <h2>Nejsi na to sama</h2>
+      <h2>Co o FIT4WOMEN říkají klientky</h2>
     </div>
-    <div class="ref-note">📝 <b>Placeholder</b> – sem doplň 3–6 reálných citací od členek (jméno, věk, foto se svolením). Reálné příběhy vlastních žen jsou podle výzkumu nejsilnější marketing zdarma.</div>
-    <div class="ref-grid">
-      {{ c.ref("„Sem patří reálná citace, např. jak se po lekcích cítí, co jí to dalo, proč se vrací.", "Jméno, věk", "Újezd nad Lesy") }}
-      {{ c.ref("„Ideálně příběh typu ‚přišla jsem po porodu a našla partu, ke které se těším každý týden.'", "Jméno, věk", "Koloděje") }}
-      {{ c.ref("„Krátká, konkrétní, autentická – víc než dokonalá. Klidně i o tom, že chodí cvičit s dětmi.", "Jméno, věk", "Újezd nad Lesy") }}
+    <div class="ref-carousel" data-carousel>
+      <div class="ref-carousel-track">
+        {{ c.ref("„Lekce jsou úžasné. A kromě cvičení mi neskutečně změnily život k lepšímu, protože mám díky nim v Újezdě a okolí spoustu skvělých kamarádek a známých. Bez téhle komunity by bylo mateřství úplně jiné, osamělé a těžší, takže moc díky, Peťo. A všem doporučuji, nebojte se to zkusit, příjemně se rozhýbat a setkat se s fajn ženami.", "Gabča Č.", "Újezd nad Lesy") }}
+        {{ c.ref("„Cvičení s Péťou mohu jen doporučit. Každý trénink probíhá v přátelské atmosféře a čas vždy příjemně uteče, po lekci odcházím spokojená, pozitivně naladěná a plná nové energie. A hlavně výsledky jsou brzy znát.", "Terka H.", "Újezd nad Lesy") }}
+        {{ c.ref("„Lekce s příjemnou atmosférou, kde je každý cvik vysvětlen pro správné provedení. Domů odcházím nabitá, a druhý den vím, že jsem pro sebe něco udělala. Já i děti se těšíme na každou další lekci. :)", "Katka M.", "Újezd nad Lesy") }}
+        {{ c.ref("„Cvičení s Peťou jsem začala navštěvovat po nastěhování do Újezda a byla to ta nejlepší volba. Seznámila jsem se s maminkami ve stejné životní fázi, moje děti si našly přirozeným způsobem nové kamarády a já se začala pravidelně zdravě hýbat – jak s kočárkem, tak později i bez něho. Oceňuji na Péti lekcích, že jsou vždy dopředu do detailu promyšlené, vše na sebe logicky navazuje a vždy je prostor si dle svých individuálních potřeb ubrat či přidat.", "Alča N.", "Újezd nad Lesy") }}
+        {{ c.ref("„Cvičení je bezvadné. Péťa ho upravuje podle možností, tak že jsem byla schopná začít cvičit i krátce po porodu s prckem. Seznámila jsem se tu i se skvělou komunitou maminek. Na druhou stranu je senzační i možnost cvičení bez dětí, kde se člověk může soustředit jen na sebe a dát si pořádně do těla. Doporučuji všemi deseti.", "Lída F.", "Koloděje") }}
+      </div>
+      <div class="ref-carousel-nav">
+        <button type="button" class="ref-carousel-btn" data-carousel-prev aria-label="Předchozí recenze">&larr;</button>
+        <div class="ref-carousel-dots" data-carousel-dots></div>
+        <button type="button" class="ref-carousel-btn" data-carousel-next aria-label="Další recenze">&rarr;</button>
+      </div>
     </div>
-    <div class="count">Už s námi pravidelně cvičí <b>30+</b> žen z okolí <span style="font-size:.8rem;color:var(--muted)">(číslo uprav dle reality)</span></div>
   </div>
 </section>
 

@@ -89,7 +89,7 @@ header.site .brand img{position:absolute;left:0;top:6px;height:96px;width:auto;m
 .hero::before{content:"";position:absolute;inset:0;opacity:.55;pointer-events:none;
   background:radial-gradient(40% 55% at 12% 90%,rgba(154,107,189,.5),transparent 70%)}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;
-  gap:48px;align-items:center;min-height:min(90vh,760px);padding-top:56px;padding-bottom:56px}
+  gap:48px;align-items:center;min-height:min(90vh,760px);padding-top:56px;padding-bottom:24px}
 .hero-copy{max-width:560px}
 .hero-sub{font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;
   font-size:.78rem;font-weight:700;color:var(--purple-400);margin-bottom:16px}
@@ -102,6 +102,8 @@ header.site .brand img{position:absolute;left:0;top:6px;height:96px;width:auto;m
 .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--gold-400);
   box-shadow:0 0 0 4px rgba(224,184,98,.3)}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-tagline{position:relative;z-index:2;text-align:center;max-width:640px;
+  margin:0 auto;padding:0 0 56px;font-size:1.05rem;color:#efe3f5}
 .hero-media{position:relative;height:100%;min-height:420px}
 .hero-media::before{content:"";position:absolute;inset:-14%;z-index:0;pointer-events:none;filter:blur(34px);
   background:
@@ -198,9 +200,6 @@ svg.icon{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.8;stroke-li
 .loc p{color:var(--muted);margin:0 0 18px;font-size:.96rem}
 
 /* ---------- Reference ---------- */
-.ref-note{max-width:760px;margin:0 auto 34px;text-align:center;color:var(--purple-700);
-  background:#fff;border:1px dashed var(--purple-400);border-radius:var(--radius);padding:14px 20px;font-size:.9rem}
-.ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .ref{background:#fff;border:1px solid var(--taupe-200);border-radius:var(--radius);
   padding:26px 24px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
 .ref .stars{color:var(--purple-500);letter-spacing:.15em;margin-bottom:12px;font-size:1rem}
@@ -210,9 +209,21 @@ svg.icon{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.8;stroke-li
   color:var(--taupe-700);font-weight:700;font-family:var(--serif)}
 .ref .who b{display:block;font-size:.92rem}
 .ref .who span{font-size:.8rem;color:var(--muted)}
-.count{text-align:center;margin-top:34px;font-family:var(--serif);font-size:1.25rem;color:var(--purple-700)}
-.count b{font-family:var(--sans);font-weight:800;font-size:1.75rem;color:var(--purple-600);
-  letter-spacing:-.01em;margin:0 .06em}
+
+/* Karusel recenzí – 3 karty na řádek, posun po skupinách */
+.ref-carousel-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:24px;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none}
+.ref-carousel-track::-webkit-scrollbar{display:none}
+.ref-carousel-track .ref{flex:0 0 calc((100% - 48px)/3);scroll-snap-align:start}
+.ref-carousel-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:18px}
+.ref-carousel-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--taupe-200);
+  background:#fff;display:grid;place-items:center;cursor:pointer;color:var(--purple-700);
+  font-size:1.05rem;line-height:1;transition:background .15s,border-color .15s}
+.ref-carousel-btn:hover{background:var(--lav-100);border-color:var(--purple-400)}
+.ref-carousel-dots{display:flex;gap:8px}
+.ref-carousel-dots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;
+  background:var(--taupe-200);cursor:pointer}
+.ref-carousel-dots button.active{background:var(--purple-500)}
 
 /* ---------- FAQ ---------- */
 .faq-wrap{max-width:760px;margin:0 auto}
@@ -402,10 +413,11 @@ footer.site::before{content:"";position:absolute;top:0;left:0;right:0;height:4px
   .menu.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;
     background:var(--sand-50);border-bottom:1px solid var(--taupe-200);padding:14px 22px;gap:6px}
   .menu.open a{padding:12px 0;border-bottom:1px solid var(--taupe-200)}
-  .split,.values,.locs,.ref-grid,.foot,.sched,.steps,.price-grid,
+  .split,.values,.locs,.foot,.sched,.steps,.price-grid,
   .contact-cards,.maps,.camp-grid,.info-cols,.story,.form .row2,
   .hero-grid,.kids-split{grid-template-columns:1fr}
   .story .portrait{max-width:300px;margin:0 auto}
+  .ref-carousel-track .ref{flex:0 0 100%}
   /* Hero: text nad fotkou, fotka na plnou šířku */
   .hero-grid{gap:36px;text-align:center;padding-top:44px}
   .hero-copy{max-width:none;margin:0 auto}

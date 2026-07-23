@@ -44,12 +44,12 @@
 </div>
 {% endmacro %}
 
-{# --- Reference (placeholder citace) --- #}
-{% macro ref(quote, name, place) %}
+{# --- Reference (skutečné citace klientek) --- #}
+{% macro ref(quote, name, place="") %}
 <div class="ref">
   <div class="stars">★★★★★</div>
   <blockquote>{{ quote }}</blockquote>
-  <div class="who"><div class="av">?</div><div><b>{{ name }}</b><span>{{ place }}</span></div></div>
+  <div class="who"><div class="av">{{ name[0] }}</div><div><b>{{ name }}</b>{% if place %}<span>{{ place }}</span>{% endif %}</div></div>
 </div>
 {% endmacro %}
 

@@ -23,6 +23,7 @@ module.exports = {
   contact: {
     name: "Petra Váňová",
     role: "Instruktorka fitness – osobní a kondiční trenérka",
+    ico: "29665353",
     email: "fit4womenujezd@gmail.com",
     phone: "+420 724 179 352",
     phoneHref: "tel:+420724179352",
