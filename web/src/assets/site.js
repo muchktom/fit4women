@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function computePerView() {
       var slideWidth = slides[0].getBoundingClientRect().width;
-      if (!slideWidth) return perView || 1; // skryté (např. za heslovou branou) – nepřepočítávat na 0 šířku
+      if (!slideWidth) return perView || 1; // skryté – nepřepočítávat na 0 šířku
       var styles = getComputedStyle(track);
       var gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
       return Math.max(1, Math.round((track.clientWidth + gap) / (slideWidth + gap)));
@@ -107,8 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
       clearTimeout(track._scrollTimer);
       track._scrollTimer = setTimeout(updateDots, 80);
     });
-    // ResizeObserver zachytí jak změnu šířky okna, tak odemčení heslové brány
-    // (do té doby je sekce display:none a šířku karet nejde spočítat).
+    // ResizeObserver zachytí i změnu šířky okna.
     if (window.ResizeObserver) {
       var ro = new ResizeObserver(function () { refresh(); });
       ro.observe(track);
