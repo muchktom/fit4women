@@ -1,0 +1,20 @@
+---
+layout: base.njk
+permalink: /404.html
+eleventyExcludeFromCollections: true
+noindex: true
+title: "Stránka nenalezena | FIT4WOMEN"
+description: "Tahle stránka neexistuje nebo byla přesunuta. Vrať se na úvodní stránku FIT4WOMEN."
+---
+{% import "components.njk" as c %}
+
+{{ c.pageHero("Stránka nenalezena", "Omlouvám se, tahle adresa neexistuje nebo byla přesunuta. Zkus se vrátit na úvodní stránku, nebo si rovnou napiš o lekci.") }}
+
+<section class="bg-white">
+  <div class="wrap">
+    <p class="center" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-primary" href="{{ '/' | url }}">Zpět na úvod</a>
+      <a class="btn btn-outline" href="{{ '/kontakt/' | url }}">Napiš mi</a>
+    </p>
+  </div>
+</section>

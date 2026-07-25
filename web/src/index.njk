@@ -103,7 +103,7 @@ description: "Skupinové i individuální cvičení pro ženy v Újezdě nad Les
     <div class="ref-carousel" data-carousel>
       <div class="ref-carousel-track">
         {%- for r in reviews.items %}
-        {{ c.ref("„" + r.quote, r.name, r.place) }}
+        {{ c.ref("„" + r.quote, r.name, r.place, r.rating) }}
         {%- endfor %}
       </div>
       <div class="ref-carousel-nav">

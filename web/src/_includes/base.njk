@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ title }}</title>
 <meta name="description" content="{{ description }}">
+{% if noindex %}<meta name="robots" content="noindex">{% endif %}
 <meta name="google-site-verification" content="gYJ3zgKZ2-01-9B35CzUEbnbczUlwWyzOFFRFaKW3fg">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 <link rel="icon" href="{{ '/assets/favicon.svg' | url }}" type="image/svg+xml">
@@ -44,6 +45,7 @@
   "telephone": site.contact.phone,
   "email": site.contact.email,
   "priceRange": "130–600 Kč",
+  "openingHoursSpecification": openingHours,
   "sameAs": [site.contact.instagram, site.contact.facebook, site.contact.googleMaps],
   "founder": {
     "@type": "Person",

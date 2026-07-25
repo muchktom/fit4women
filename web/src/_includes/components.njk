@@ -44,10 +44,11 @@
 </div>
 {% endmacro %}
 
-{# --- Reference (skutečné citace klientek) --- #}
-{% macro ref(quote, name, place="") %}
+{# --- Reference (skutečné citace klientek). rating = 1–5, řídí hvězdičky i jejich popisek pro čtečky. --- #}
+{% macro ref(quote, name, place="", rating=5) %}
 <div class="ref">
-  <div class="stars">★★★★★</div>
+  <div class="stars" aria-hidden="true">{{ "★" | repeat(rating) }}{{ "☆" | repeat(5 - rating) }}</div>
+  <span class="sr-only">Hodnocení {{ rating }} z 5 hvězdiček</span>
   <blockquote>{{ quote }}</blockquote>
   <div class="who"><div class="av">{{ name[0] }}</div><div><b>{{ name }}</b>{% if place %}<span>{{ place }}</span>{% endif %}</div></div>
 </div>
