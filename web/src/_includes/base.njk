@@ -18,6 +18,46 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="{{ '/assets/styles.css' | url }}">
 <script defer src="{{ '/assets/site.js' | url }}"></script>
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "name": "FIT4WOMEN",
+  "url": site.url,
+  "description": description,
+  "image": site.url + ('/assets/images/logo-mark.png' | url),
+  "telephone": site.contact.phone,
+  "email": site.contact.email,
+  "sameAs": [site.contact.instagram, site.contact.facebook],
+  "founder": {
+    "@type": "Person",
+    "name": site.contact.name,
+    "jobTitle": site.contact.role
+  },
+  "location": [
+    {
+      "@type": "Place",
+      "name": "Újezd nad Lesy",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Polesná",
+        "addressLocality": "Praha - Újezd nad Lesy",
+        "addressCountry": "CZ"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Koloděje",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "V Lipách 135",
+        "addressLocality": "Praha - Koloděje",
+        "addressCountry": "CZ"
+      }
+    }
+  ]
+} | dump | safe }}
+</script>
 </head>
 <body>
 
