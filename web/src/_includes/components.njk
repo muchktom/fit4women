@@ -32,10 +32,10 @@
 </div>
 {% endmacro %}
 
-{# --- Lokalita (foto + text + odkaz na rozvrh) --- #}
-{% macro loc(title, text, href, img, alt) %}
+{# --- Lokalita (foto + text + odkaz na rozvrh). w/h = skutečné rozměry souboru (zabrání posunu layoutu při načítání). --- #}
+{% macro loc(title, text, href, img, alt, w, h) %}
 <div class="loc">
-  <div class="photo"><img src="{{ ('/assets/images/' + img) | url }}" alt="{{ alt }}" loading="lazy" decoding="async"></div>
+  <div class="photo"><img src="{{ ('/assets/images/' + img) | url }}" alt="{{ alt }}" width="{{ w }}" height="{{ h }}" loading="lazy" decoding="async"></div>
   <div class="body">
     <h3>{{ title }}</h3>
     <p>{{ text }}</p>

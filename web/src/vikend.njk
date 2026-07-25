@@ -57,7 +57,43 @@ description: "Podzimní FIT4WOMEN camp 20.–22. 11. 2026 na Tvrzi Krassa v Podj
   <div class="wrap">
     {{ c.sectionHead("Zarezervuj si místo včas", "Rezervaci ti potvrdím e-mailem.", "Rezervace") }}
     <div class="gform-embed">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdyXB3WBO12KmGi-OSzgQ7C-QphTEsOkhua1e4J4gDfYHuK_Q/viewform?embedded=true&entry.24654794=1" width="640" height="1280" frameborder="0" marginheight="0" marginwidth="0">Načítání…</iframe>
+      <iframe title="Rezervační formulář – Víkend s FIT4WOMEN" loading="lazy" src="https://docs.google.com/forms/d/e/1FAIpQLSdyXB3WBO12KmGi-OSzgQ7C-QphTEsOkhua1e4J4gDfYHuK_Q/viewform?embedded=true&entry.24654794=1" width="640" height="1280" frameborder="0" marginheight="0" marginwidth="0">Načítání…</iframe>
     </div>
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Podzimní FIT4WOMEN camp",
+  "description": {{ description | dump | safe }},
+  "startDate": "2026-11-20",
+  "endDate": "2026-11-22",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "image": "{{ site.url }}{{ '/assets/images/og-share.jpg' | url }}",
+  "location": {
+    "@type": "Place",
+    "name": "Tvrz Krassa",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Chrastná 17",
+      "addressLocality": "Osečná",
+      "addressCountry": "CZ"
+    }
+  },
+  "organizer": {
+    "@type": "Person",
+    "name": {{ site.contact.name | dump | safe }},
+    "url": "{{ site.url }}/kdo-jsem/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "5990",
+    "priceCurrency": "CZK",
+    "availability": "https://schema.org/InStock",
+    "url": "{{ site.url }}/vikend/"
+  }
+}
+</script>
