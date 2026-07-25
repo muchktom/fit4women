@@ -13,9 +13,11 @@
   /* Akcentové barvy z loga (vodová skvrna: růžová → fialová → tyrkysová → zlatá) */
   --pink-500:#d9469b;
   --pink-400:#e784bf;
+  --pink-600:#c42882;     /* tmavší růžová – text na pink-100, kvůli kontrastu */
   --pink-100:#faeaf3;
   --teal-500:#249c8c;
   --teal-400:#5cc2b3;
+  --teal-600:#1c7b6e;     /* tmavší tyrkysová – text na teal-100, kvůli kontrastu */
   --teal-100:#e2f5f1;
   --gold-500:#c99a3d;
   --gold-400:#e0b862;
@@ -46,7 +48,7 @@ p{text-wrap:pretty}
 :focus-visible{outline:2px solid var(--purple-500);outline-offset:3px;border-radius:4px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
 .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.18em;
-  font-size:.72rem;font-weight:700;color:var(--purple-500)}
+  font-size:.72rem;font-weight:700;color:var(--purple-700)}
 .center{text-align:center}
 .narrow{max-width:760px;margin-left:auto;margin-right:auto}
 
@@ -141,11 +143,11 @@ section{padding:74px 0}
   padding:34px 30px;box-shadow:var(--shadow-sm);transition:transform .18s,box-shadow .18s;
   display:flex;flex-direction:column}
 .track:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.track .tag{align-self:flex-start;background:var(--lav-100);color:var(--purple-600);
+.track .tag{align-self:flex-start;background:var(--lav-100);color:var(--purple-700);
   font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   padding:.4em .9em;border-radius:999px;margin-bottom:16px}
-.track:nth-child(2) .tag{background:var(--pink-100);color:var(--pink-500)}
-.track h3{font-size:1.5rem;color:var(--plum-900);margin:0 0 10px}
+.track:nth-child(2) .tag{background:var(--pink-100);color:var(--pink-600)}
+.track h2{font-size:1.5rem;color:var(--plum-900);margin:0 0 10px}
 .track p{color:var(--muted);margin:0 0 20px;flex:1}
 .track .price{font-weight:700;color:var(--taupe-700);font-family:var(--sans);font-size:.9rem;margin-bottom:16px}
 .track a.more{font-weight:700;color:var(--purple-600);text-transform:uppercase;letter-spacing:.06em;
@@ -174,7 +176,7 @@ svg.icon{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.8;stroke-li
 .kids-photo{position:absolute;height:auto;border-radius:50%;object-fit:cover;box-shadow:var(--shadow)}
 .kids-photo.main{width:78%;aspect-ratio:1;top:0;left:0;border:6px solid var(--white)}
 .kids-photo.sub{width:46%;aspect-ratio:1;right:0;bottom:0;border:6px solid var(--white)}
-.kids-copy .tag{display:inline-block;background:var(--teal-100);color:var(--teal-500);
+.kids-copy .tag{display:inline-block;background:var(--teal-100);color:var(--teal-600);
   font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   padding:.45em .95em;border-radius:999px;margin-bottom:16px}
 .kids-copy h2{font-size:clamp(1.8rem,3.8vw,2.6rem);color:var(--plum-900);margin:0 0 14px}
@@ -221,10 +223,12 @@ svg.icon{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.8;stroke-li
   background:#fff;display:grid;place-items:center;cursor:pointer;color:var(--purple-700);
   font-size:1.05rem;line-height:1;transition:background .15s,border-color .15s}
 .ref-carousel-btn:hover{background:var(--lav-100);border-color:var(--purple-400)}
-.ref-carousel-dots{display:flex;gap:8px}
-.ref-carousel-dots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;
-  background:var(--taupe-200);cursor:pointer}
-.ref-carousel-dots button.active{background:var(--purple-500)}
+.ref-carousel-dots{display:flex}
+.ref-carousel-dots button{position:relative;width:24px;height:24px;padding:0;border:0;
+  background:transparent;cursor:pointer}
+.ref-carousel-dots button::before{content:"";position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);width:8px;height:8px;border-radius:50%;background:var(--taupe-200)}
+.ref-carousel-dots button.active::before{background:var(--purple-500)}
 
 /* ---------- FAQ ---------- */
 .faq-wrap{max-width:760px;margin:0 auto}
@@ -259,7 +263,7 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
 .story h2:first-child{margin-top:0}
 .edu{background:#fff;border:1px solid var(--taupe-200);border-radius:var(--radius);
   padding:24px 28px;box-shadow:var(--shadow-sm);margin:26px 0}
-.edu h3{margin:0 0 12px;color:var(--plum-900);font-size:1.2rem}
+.edu h2{margin:0 0 12px;color:var(--plum-900);font-size:1.2rem}
 .edu ul{list-style:none;margin:0;padding:0}
 .edu li{padding:7px 0;border-bottom:1px solid var(--taupe-200)}
 .edu li:last-child{border-bottom:0}
@@ -288,8 +292,8 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
   border-radius:50%;background:var(--lav-100);color:var(--purple-600);font-family:var(--serif);
   font-size:1.1rem;font-weight:700;margin-bottom:14px}
 .step:nth-child(1)::before{background:var(--lav-100);color:var(--purple-600)}
-.step:nth-child(2)::before{background:var(--pink-100);color:var(--pink-500)}
-.step:nth-child(3)::before{background:var(--teal-100);color:var(--teal-500)}
+.step:nth-child(2)::before{background:var(--pink-100);color:var(--pink-600)}
+.step:nth-child(3)::before{background:var(--teal-100);color:var(--teal-600)}
 .step:nth-child(4)::before{background:var(--gold-100);color:var(--gold-500)}
 .step h3{margin:0 0 6px;font-size:1.1rem;color:var(--plum-900)}
 .step p{margin:0;color:var(--muted);font-size:.92rem}

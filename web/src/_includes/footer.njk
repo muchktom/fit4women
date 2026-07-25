@@ -6,13 +6,13 @@
     </div>
 
     <div class="foot-col">
-      <h4 class="foot-head">Kontakt</h4>
+      <h3 class="foot-head">Kontakt</h3>
       <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
       <p><a href="{{ site.contact.phoneHref }}">{{ site.contact.phone }}</a></p>
     </div>
 
     <div class="foot-col">
-      <h4 class="foot-head">Kde nás najdeš</h4>
+      <h3 class="foot-head">Kde nás najdeš</h3>
       {%- for l in site.contact.locations %}
       <p>{{ l.name }} – {{ l.detail }}</p>
       {%- endfor %}

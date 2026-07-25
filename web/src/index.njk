@@ -22,7 +22,7 @@ description: "Skupinové i individuální cvičení pro ženy v Újezdě nad Les
       </div>
       <div class="hero-media">
         <img class="hero-photo main" src="{{ '/assets/images/cviceni-plaz-2.jpeg' | url }}" width="380" height="380"
-             alt="Trenérka Petra při silovém cviku">
+             alt="Trenérka Petra při silovém cviku" fetchpriority="high">
       </div>
     </div>
     <p class="hero-tagline">Nečekej, až budeš mít čas. Udělej si ho. Tvoje tělo ti poděkuje.</p>
@@ -70,9 +70,9 @@ description: "Skupinové i individuální cvičení pro ženy v Újezdě nad Les
   <div class="wrap kids-split">
     <div class="kids-media">
       <img class="kids-photo main" src="{{ '/assets/images/lekce-park.jpeg' | url }}" width="440" height="440"
-           alt="Maminky cvičí v parku, děti a kočárky hned vedle na dekách">
-      <img class="kids-photo sub" src="{{ '/assets/images/lekce-interier-2.png' | url }}" width="260" height="260"
-           alt="Cvičení v sále tělocvičny v Kolodějích s prostorem pro děti">
+           alt="Maminky cvičí v parku, děti a kočárky hned vedle na dekách" loading="lazy" decoding="async">
+      <img class="kids-photo sub" src="{{ '/assets/images/lekce-interier-2.jpg' | url }}" width="260" height="260"
+           alt="Cvičení v sále tělocvičny v Kolodějích s prostorem pro děti" loading="lazy" decoding="async">
     </div>
     <div class="kids-copy">
       <span class="tag">Kids-friendly</span>
@@ -92,7 +92,7 @@ description: "Skupinové i individuální cvičení pro ženy v Újezdě nad Les
     {{ c.sectionHead("Lokality", "Dvě místa, jedna permanentka. Vyber si podle počasí i nálady.", "Kde cvičíme") }}
     <div class="locs">
       {{ c.loc("Újezd nad Lesy", "Venkovní lekce na čerstvém vzduchu, hřiště SportsField (ul. Polesná). Ideální pro cvičení s dětmi na hřišti.", "/sluzby/#rozvrh", "lekce-hriste.jpeg", "Venkovní hřiště SportsField v Újezdě nad Lesy") }}
-      {{ c.loc("Koloděje", "Zázemí moderní tělocvičny (TJ Slavoj, V Lipách 135). Bezpečný kobercový sál s prostorem i pro děti.", "/sluzby/#rozvrh", "lekce-interier-2.png", "Tělocvična TJ Slavoj v Kolodějích") }}
+      {{ c.loc("Koloděje", "Zázemí moderní tělocvičny (TJ Slavoj, V Lipách 135). Bezpečný kobercový sál s prostorem i pro děti.", "/sluzby/#rozvrh", "lekce-interier-2.jpg", "Tělocvična TJ Slavoj v Kolodějích") }}
     </div>
   </div>
 </section>
