@@ -11,6 +11,9 @@ module.exports = function (eleventyConfig) {
   // Aktuální rok (pro copyright v patičce) – vyhodnotí se při buildu
   eleventyConfig.addGlobalData("year", () => new Date().getFullYear());
 
+  // Opakuje řetězec n-krát (pro hvězdičkové hodnocení referencí)
+  eleventyConfig.addFilter("repeat", (str, n) => str.repeat(Math.max(0, n)));
+
   return {
     // Web běží na vlastní doméně (www.fit4women.cz), proto kořenový prefix.
     // Odkazy a assety proto používají v šablonách filtr `| url`.

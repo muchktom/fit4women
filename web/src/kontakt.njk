@@ -33,15 +33,3 @@ description: "Kontakt na Petru Váňovou (FIT4WOMEN) – telefon, e-mail, WhatsA
   </div>
 </section>
 
-<section class="bg-sand">
-  <div class="wrap">
-    {{ c.sectionHead("Chceš se na něco zeptat?", "", "Napiš mi") }}
-    <form class="form" data-mailform data-to="{{ site.contact.email }}" data-subject="Dotaz z webu FIT4WOMEN">
-      {{ c.formField("Jméno a příjmení", "jmeno", "text", true, "Jméno") }}
-      {{ c.formField("E-mail", "email", "email", true) }}
-      {{ c.formTextarea("Zpráva", "zprava", "", true) }}
-      <button class="btn btn-primary submit" type="submit">Odeslat</button>
-      <p class="hint">Odesláním se otevře tvůj e-mailový klient s předvyplněnou zprávou.</p>
-    </form>
-  </div>
-</section>

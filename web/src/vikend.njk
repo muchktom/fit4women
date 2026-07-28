@@ -52,18 +52,48 @@ description: "Podzimní FIT4WOMEN camp 20.–22. 11. 2026 na Tvrzi Krassa v Podj
   </div>
 </section>
 
-<section id="rezervace" class="bg-sand">
+<!-- ===== PŘIHLÁŠENÍ ===== -->
+<section id="prihlaseni" class="bg-white">
   <div class="wrap">
     {{ c.sectionHead("Zarezervuj si místo včas", "Rezervaci ti potvrdím e-mailem.", "Rezervace") }}
-    <form class="form" data-mailform data-to="{{ site.contact.email }}" data-subject="Rezervace – Podzimní FIT4WOMEN camp 20.–22. 11. 2026">
-      {{ c.formField("Jméno a příjmení", "jmeno", "text", true, "Jméno") }}
-      {% call c.formRow() %}
-        {{ c.formField("E-mail", "email", "email", true) }}
-        {{ c.formField("Telefonní číslo", "telefon", "tel", true, "Telefon") }}
-      {% endcall %}
-      {{ c.formTextarea("Poznámka", "pozn", "Např. s kým chceš na pokoji, dotazy k programu…") }}
-      <button class="btn btn-primary submit" type="submit">Rezervovat místo</button>
-      <p class="hint">Odesláním se otevře tvůj e-mailový klient s předvyplněnou zprávou.</p>
-    </form>
+    <div class="gform-embed gform-weekend">
+      <iframe title="Rezervační formulář – Víkend s FIT4WOMEN" loading="lazy" src="https://docs.google.com/forms/d/e/1FAIpQLSdyXB3WBO12KmGi-OSzgQ7C-QphTEsOkhua1e4J4gDfYHuK_Q/viewform?embedded=true&entry.24654794=1" width="640" height="1280" frameborder="0" marginheight="0" marginwidth="0">Načítání…</iframe>
+    </div>
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Podzimní FIT4WOMEN camp",
+  "description": {{ description | dump | safe }},
+  "startDate": "2026-11-20",
+  "endDate": "2026-11-22",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "image": "{{ site.url }}{{ '/assets/images/og-share.jpg' | url }}",
+  "location": {
+    "@type": "Place",
+    "name": "Tvrz Krassa",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Chrastná 17",
+      "addressLocality": "Osečná",
+      "addressCountry": "CZ"
+    }
+  },
+  "organizer": {
+    "@type": "Person",
+    "name": {{ site.contact.name | dump | safe }},
+    "url": "{{ site.url }}/kdo-jsem/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "5990",
+    "priceCurrency": "CZK",
+    "availability": "https://schema.org/InStock",
+    "url": "{{ site.url }}/vikend/"
+  }
+}
+</script>

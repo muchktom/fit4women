@@ -31,15 +31,9 @@ description: "Individuální i skupinové lekce cvičení pro ženy v Újezdě n
   <div class="wrap">
     {{ c.sectionHead("Skupinové lekce", "Venkovní lekce od jara do podzimu, v chladu a dešti se přesouváme do tělocvičny v Kolodějích.", "Ve skupině") }}
     <div id="rozvrh" class="sched">
-      {{ c.scheduleCard("Středa", "17:00 – 18:00", "Funkční trénink",
-        "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
-        "Dynamičtější lekce. Buduje sílu, vytrvalost, stabilitu i mobilitu a zvyšuje metabolismus.", "yes") }}
-      {{ c.scheduleCard("Pátek", "9:00 – 10:00", "Core &amp; mobilita",
-        "dětské hřiště Oplanská, Újezd nad Lesy",
-        "Zdravé a silné tělo bez bolesti. Buduje sílu, stabilitu a mobilitu.", "yes") }}
-      {{ c.scheduleCard("Neděle", "17:00 – 18:00", "Silový trénink",
-        "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
-        "Silově zaměřená lekce s přidanou zátěží (jednoručky 1–5 kg). Síla, stabilita, mobilita, metabolismus.", "no") }}
+      {%- for s in schedule %}
+      {{ c.scheduleCard(s.day, s.time, s.title, s.place, s.text, s.kids) }}
+      {%- endfor %}
     </div>
     <p class="center" style="margin-top:30px"><a class="btn btn-primary" href="#prihlaseni">Přihlásit se na lekci</a></p>
   </div>
@@ -100,29 +94,9 @@ description: "Individuální i skupinové lekce cvičení pro ženy v Újezdě n
 <!-- ===== PŘIHLÁŠENÍ ===== -->
 <section id="prihlaseni" class="bg-white">
   <div class="wrap">
-    {{ c.sectionHead("Přihlášení na trénink", "Napiš mi a domluvíme se. <b>První lekce je zdarma.</b> Přijď nezávazně vyzkoušet, jak to u nás chodí.", "První krok") }}
-    <form class="form" data-mailform data-to="{{ site.contact.email }}" data-subject="Přihláška na trénink FIT4WOMEN">
-      {{ c.formField("Jméno a příjmení", "jmeno", "text", true, "Jméno") }}
-      {% call c.formRow() %}
-        {{ c.formField("E-mail", "email", "email", true) }}
-        {{ c.formField("Telefon", "telefon", "tel") }}
-      {% endcall %}
-      {% call c.formRow() %}
-        <div class="field">
-          <label for="lekce">Vyber lekci</label>
-          <select id="lekce" name="lekce" data-label="Lekce" required>
-            <option value="" selected disabled>Vyber z možností…</option>
-            <option>Středa 17:00 – Funkční trénink</option>
-            <option>Pátek 9:00 – Core &amp; mobilita</option>
-            <option>Neděle 17:00 – Silový trénink</option>
-            <option>Individuální trénink</option>
-          </select>
-        </div>
-        {{ c.formField("Preferovaný termín", "datum", "date", false, "Termín") }}
-      {% endcall %}
-      {{ c.formTextarea("Poznámka (nepovinné)", "pozn", "Např. jestli přijdeš s dětmi, na co se chceš zaměřit…", false, "Poznámka") }}
-      <button class="btn btn-primary submit" type="submit">Odeslat přihlášku</button>
-      <p class="hint">Odesláním se otevře tvůj e-mailový klient s předvyplněnou zprávou. Můžeš mi také rovnou napsat do <a href="{{ site.contact.whatsapp }}" target="_blank" rel="noopener">WhatsApp skupiny</a>.</p>
-    </form>
+    {{ c.sectionHead("Přihlášení na trénink", "Vyplň krátký formulář a domluvíme se. <b>První lekce je zdarma.</b> Přijď nezávazně vyzkoušet, jak to u nás chodí.", "První krok") }}
+    <div class="gform-embed gform-short">
+      <iframe title="Přihlašovací formulář na lekci FIT4WOMEN" loading="lazy" src="https://docs.google.com/forms/d/e/1FAIpQLSdbi4lm9Xdj7eWY97glVuGDADxA8fW77H9j0EyjRXa-FE3BjA/viewform?embedded=true" width="640" height="1280" frameborder="0" marginheight="0" marginwidth="0">Načítání…</iframe>
+    </div>
   </div>
 </section>
