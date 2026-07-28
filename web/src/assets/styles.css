@@ -440,7 +440,8 @@ footer.site::before{content:"";position:absolute;top:0;left:0;right:0;height:4px
   .contact-cards,.maps,.camp-grid,.info-cols,.story,.form .row2,
   .hero-grid,.kids-split{grid-template-columns:1fr}
   .story .portrait{max-width:300px;margin:0 auto}
-  .ref-carousel-track .ref{flex:0 0 100%}
+  .ref-carousel-track{flex-direction:column;overflow-x:hidden;gap:16px}
+  .ref-carousel-track .ref{flex:0 0 auto;width:100%}
   /* Hero: text nad fotkou, fotka na plnou šířku */
   .hero-grid{gap:36px;text-align:center;padding-top:44px}
   .hero-copy{max-width:none;margin:0 auto}
