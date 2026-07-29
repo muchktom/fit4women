@@ -89,5 +89,10 @@
 
 {% include "footer.njk" %}
 
+{% if isProd and site.analytics.cloudflareToken %}
+{# Cloudflare Web Analytics – bez cookies, proto bez souhlasu (cookie lišty). #}
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.analytics.cloudflareToken }}"}'></script>
+{% endif %}
+
 </body>
 </html>

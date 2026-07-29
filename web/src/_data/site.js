@@ -11,6 +11,13 @@ module.exports = {
   // Primární akce (nízkoprahový první krok) – kam míří hlavní CTA v hlavičce
   primaryCta: { href: "/sluzby/#prihlaseni", label: "Přidat se" },
 
+  // Cloudflare Web Analytics – měření bez cookies (nevyžaduje cookie lištu).
+  // Token není tajný (je vidět ve zdroji stránky). Beacon se vkládá jen
+  // do produkčního buildu (viz `isProd` v .eleventy.js).
+  analytics: {
+    cloudflareToken: "46ecafcc24804643833db16b11fb796d",
+  },
+
   nav: [
     { href: "/",           label: "Úvod",               key: "uvod" },
     { href: "/kdo-jsem/",  label: "Kdo jsem",           key: "kdo-jsem" },
