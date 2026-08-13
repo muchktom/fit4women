@@ -11,6 +11,10 @@ module.exports = function (eleventyConfig) {
   // Aktuální rok (pro copyright v patičce) – vyhodnotí se při buildu
   eleventyConfig.addGlobalData("year", () => new Date().getFullYear());
 
+  // Produkční build = build v CI (GitHub Actions nastavuje CI=true).
+  // Lokální `npm start` ani `npm run build` tedy neposílá data do analytiky.
+  eleventyConfig.addGlobalData("isProd", () => Boolean(process.env.CI));
+
   // Opakuje řetězec n-krát (pro hvězdičkové hodnocení referencí)
   eleventyConfig.addFilter("repeat", (str, n) => str.repeat(Math.max(0, n)));
 

@@ -88,12 +88,19 @@ description: "Podzimní FIT4WOMEN camp 20.–22. 11. 2026 na Tvrzi Krassa v Podj
     "name": {{ site.contact.name | dump | safe }},
     "url": "{{ site.url }}/kdo-jsem/"
   },
+  "performer": {
+    "@type": "Person",
+    "name": {{ site.contact.name | dump | safe }},
+    "jobTitle": {{ site.contact.role | dump | safe }},
+    "url": "{{ site.url }}/kdo-jsem/"
+  },
   "offers": {
     "@type": "Offer",
     "price": "5990",
     "priceCurrency": "CZK",
     "availability": "https://schema.org/InStock",
-    "url": "{{ site.url }}/vikend/"
+    "url": "{{ site.url }}/vikend/",
+    "validFrom": "2026-07-25T00:00:00+02:00"
   }
 }
 </script>
