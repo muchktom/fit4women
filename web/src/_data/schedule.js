@@ -11,7 +11,7 @@ module.exports = [
     closes: "18:00",
     title: "Funkční trénink",
     place: "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
-    text: "Dynamičtější lekce. Buduje sílu, vytrvalost, stabilitu i mobilitu a zvyšuje metabolismus.",
+    text: "Dynamičtější lekce. Spalování tuků, budování síly, vytrvalosti, stability i mobility.",
     kids: "yes",
   },
   {
@@ -22,7 +22,7 @@ module.exports = [
     closes: "11:00",
     title: "Core &amp; mobilita",
     place: "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
-    text: "Zdravé a silné tělo bez bolesti. Buduje sílu, stabilitu a mobilitu.",
+    text: "Zdravé a silné tělo bez bolesti. Budování silného středu těla. Tepovka vhodná pro, spalování tuků. Mobilita.",
     kids: "yes",
   },
   {
@@ -33,7 +33,7 @@ module.exports = [
     closes: "18:00",
     title: "Silový trénink",
     place: "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
-    text: "Silově zaměřená lekce s přidanou zátěží (jednoručky 1–6 kg). Síla, stabilita, mobilita, metabolismus.",
+    text: "Silová lekce. Budování síly a stability s přidanou zátěží (jednoručky 1-6 kg), tepovka ideální pro spalování tuků.",
     kids: "no",
   },
 ];
