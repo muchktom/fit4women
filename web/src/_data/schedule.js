@@ -22,7 +22,7 @@ module.exports = [
     closes: "11:00",
     title: "Core &amp; mobilita",
     place: "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
-    text: "Zdravé a silné tělo bez bolesti. Budování silného středu těla. Tepovka vhodná pro, spalování tuků. Mobilita.",
+    text: "Zdravé a silné tělo bez bolesti. Budování silného středu těla. Tepovka ideální pro spalování tuků. Mobilita.",
     kids: "yes",
   },
   {
