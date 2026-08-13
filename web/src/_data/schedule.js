@@ -17,9 +17,9 @@ module.exports = [
   {
     day: "Pátek",
     dayOfWeek: "Friday",
-    time: "9:00 – 10:00",
-    opens: "09:00",
-    closes: "10:00",
+    time: "10:00 – 11:00",
+    opens: "10:00",
+    closes: "11:00",
     title: "Core &amp; mobilita",
     place: "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
     text: "Zdravé a silné tělo bez bolesti. Buduje sílu, stabilitu a mobilitu.",
