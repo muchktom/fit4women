@@ -11,7 +11,7 @@ module.exports = [
     closes: "18:00",
     title: "Funkční trénink",
     place: "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
-    text: "Dynamičtější lekce. Spalování tuků, budování síly, vytrvalosti, stability i mobility.",
+    text: "Dynamičtější lekce. Spalování tuků, budování síly a vytrvalosti. Posilování s vlastní vahou, odporovou gumou, overballem. Stabilita, mobilita.",
     kids: "yes",
   },
   {
