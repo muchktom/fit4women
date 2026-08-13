@@ -33,7 +33,7 @@ module.exports = [
     closes: "18:00",
     title: "Silový trénink",
     place: "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
-    text: "Silově zaměřená lekce s přidanou zátěží (jednoručky 1–5 kg). Síla, stabilita, mobilita, metabolismus.",
+    text: "Silově zaměřená lekce s přidanou zátěží (jednoručky 1–6 kg). Síla, stabilita, mobilita, metabolismus.",
     kids: "no",
   },
 ];
