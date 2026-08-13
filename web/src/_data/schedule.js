@@ -21,7 +21,7 @@ module.exports = [
     opens: "09:00",
     closes: "10:00",
     title: "Core &amp; mobilita",
-    place: "dětské hřiště Oplanská, Újezd nad Lesy",
+    place: "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
     text: "Zdravé a silné tělo bez bolesti. Buduje sílu, stabilitu a mobilitu.",
     kids: "yes",
   },
