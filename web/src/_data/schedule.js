@@ -21,7 +21,7 @@ module.exports = [
     opens: "10:00",
     closes: "11:00",
     title: "Core &amp; mobilita",
-    place: "hřiště SportsField, ul. Polesná, Újezd nad Lesy",
+    place: "TJ Slavoj, V lipách 135, Koloděje",
     text: "Zdravé a silné tělo bez bolesti. Budování silného středu těla. Tepovka ideální pro spalování tuků. Mobilita.",
     kids: "yes",
   },
