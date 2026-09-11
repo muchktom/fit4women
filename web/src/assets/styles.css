@@ -98,12 +98,11 @@ header.site .brand img{height:56px;width:auto;max-width:none;display:block}
 /* ---------- Hero (domovská) – split: text + kruhové fotky ---------- */
 .hero{position:relative;color:#fff;overflow:hidden;padding:0;
   background:
-    radial-gradient(46% 60% at 96% 4%,var(--pink-500) 0%,transparent 68%),
-    radial-gradient(50% 62% at 84% 92%,var(--gold-400) 0%,transparent 66%),
-    radial-gradient(42% 55% at 46% 100%,var(--teal-400) 0%,transparent 68%),
-    radial-gradient(120% 120% at 85% 10%,var(--purple-600) 0%,var(--purple-700) 45%,var(--plum-900) 100%)}
+    linear-gradient(112deg,var(--plum-900) 0%,#403052 43%,var(--purple-700) 72%,#287f79 100%)}
 .hero::before{content:"";position:absolute;inset:0;opacity:.55;pointer-events:none;
-  background:radial-gradient(40% 55% at 12% 90%,rgba(154,107,189,.5),transparent 70%)}
+  background:
+    radial-gradient(34% 72% at 78% 46%,rgba(217,70,155,.48),transparent 72%),
+    radial-gradient(24% 48% at 93% 86%,rgba(224,184,98,.35),transparent 72%)}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;
   gap:48px;align-items:center;min-height:min(90vh,760px);padding-top:56px;padding-bottom:24px}
 .hero-copy{max-width:560px}
@@ -123,10 +122,9 @@ header.site .brand img{height:56px;width:auto;max-width:none;display:block}
 .hero-media{position:relative;height:100%;min-height:420px}
 .hero-media::before{content:"";position:absolute;inset:-14%;z-index:0;pointer-events:none;filter:blur(34px);
   background:
-    radial-gradient(40% 40% at 20% 16%,rgba(217,70,155,.85),transparent 72%),
-    radial-gradient(44% 44% at 80% 28%,rgba(190,140,233,.8),transparent 72%),
-    radial-gradient(42% 42% at 74% 80%,rgba(92,194,179,.8),transparent 72%),
-    radial-gradient(38% 38% at 16% 84%,rgba(224,184,98,.85),transparent 72%)}
+    radial-gradient(42% 42% at 48% 34%,rgba(231,132,191,.72),transparent 72%),
+    radial-gradient(44% 46% at 70% 66%,rgba(92,194,179,.72),transparent 72%),
+    radial-gradient(34% 34% at 24% 78%,rgba(224,184,98,.55),transparent 72%)}
 .hero-photo{position:absolute;z-index:1;height:auto;border-radius:50%;object-fit:cover;
   border:5px solid rgba(255,255,255,.9);box-shadow:0 24px 60px rgba(46,31,61,.45)}
 .hero-photo.main{width:min(76%,380px);aspect-ratio:1;top:50%;left:50%;transform:translate(-52%,-50%)}
