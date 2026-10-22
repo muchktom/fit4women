@@ -275,8 +275,14 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
 
 /* Story (Kdo jsem) */
 .story{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:start}
-.story .portrait{position:relative}
-.story .portrait img{width:100%;aspect-ratio:1;object-fit:contain;display:block}
+.story .portrait{position:relative;isolation:isolate}
+.story .portrait::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(to right,#fff 0%,rgba(255,255,255,0) 10%,rgba(255,255,255,0) 90%,#fff 100%),
+    linear-gradient(to bottom,#fff 0%,rgba(255,255,255,0) 10%,rgba(255,255,255,0) 90%,#fff 100%)}
+.story .portrait img{width:100%;height:auto;object-fit:contain;display:block}
+.story > div:not(.portrait) > p:first-child{margin-top:0}
+.story-section{padding:52px 0}
 .story h2:first-child{margin-top:0}
 .edu{background:#fff;border:1px solid var(--taupe-200);border-radius:var(--radius);
   padding:24px 28px;box-shadow:var(--shadow-sm);margin:26px 0}
@@ -443,6 +449,8 @@ footer.site::before{content:"";position:absolute;top:0;left:0;right:0;height:4px
   .split,.values,.locs,.foot,.sched,.steps,.price-grid,
   .contact-cards,.maps,.camp-grid,.info-cols,.story,.form .row2,
   .hero-grid,.kids-split{grid-template-columns:1fr}
+  .story-section{padding:30px 0}
+  .story{gap:22px}
   .story .portrait{max-width:300px;margin:0 auto}
   .ref-carousel-track{flex-direction:column;overflow-x:hidden;gap:16px}
   .ref-carousel-track .ref{flex:0 0 auto;width:100%}

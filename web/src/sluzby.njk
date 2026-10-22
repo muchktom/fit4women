@@ -29,7 +29,7 @@ description: "Individuální i skupinové lekce cvičení pro ženy v Újezdě n
 <!-- ===== SKUPINOVÉ / ROZVRH ===== -->
 <section id="skupinove" class="bg-sand">
   <div class="wrap">
-    {{ c.sectionHead("Skupinové lekce", "Venkovní lekce od jara do podzimu, v chladu a dešti se přesouváme do tělocvičny v Kolodějích.", "Ve skupině") }}
+    {{ c.sectionHead("Skupinové lekce", "Vnitřní lekce v TJ Slavoj Koloděje probíhají pře, v chladu a dešti se přesouváme do tělocvičny v Kolodějích.", "Ve skupině") }}
     <div id="rozvrh" class="sched">
       {%- for s in schedule %}
       {{ c.scheduleCard(s.day, s.time, s.title, s.place, s.text, s.kids) }}
