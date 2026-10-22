@@ -83,7 +83,7 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(250,246,241,.55);
   backdrop-filter:saturate(1.6) blur(12px);-webkit-backdrop-filter:saturate(1.6) blur(12px);
   border-bottom:1px solid rgba(255,255,255,.55);box-shadow:0 1px 0 rgba(255,255,255,.7) inset,var(--shadow-sm)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:72px}
-/* Logo je vodorovné (šířka:výška ~1,57), takže se vejde celé do lišty –
+/* Logo je vodorovné (šířka:výška ~2,21), takže se vejde celé do lišty –
    žádný přesah pod hlavičku jako u dřívějšího kulatého znaku. */
 header.site .brand{position:relative;z-index:2;display:flex;align-items:center;height:100%;flex:none}
 header.site .brand img{height:56px;width:auto;max-width:none;display:block}
