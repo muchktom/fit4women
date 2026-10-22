@@ -184,13 +184,8 @@ section{padding:74px 0}
 .value p{color:#fff;margin:0;font-size:.98rem}
 svg.icon{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
-/* ---------- Kids-friendly: kruhové fotky + text ---------- */
+/* ---------- Kids-friendly ---------- */
 .kids{background:var(--white)}
-.kids-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.kids-media{position:relative;aspect-ratio:1/.92}
-.kids-photo{position:absolute;height:auto;border-radius:50%;object-fit:cover;box-shadow:var(--shadow)}
-.kids-photo.main{width:78%;aspect-ratio:1;top:0;left:0;border:6px solid var(--white)}
-.kids-photo.sub{width:46%;aspect-ratio:1;right:0;bottom:0;border:6px solid var(--white)}
 .kids-copy .tag{display:inline-block;background:var(--teal-100);color:var(--teal-600);
   font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   padding:.45em .95em;border-radius:999px;margin-bottom:16px}
@@ -448,7 +443,7 @@ footer.site::before{content:"";position:absolute;top:0;left:0;right:0;height:4px
   .menu.open a{padding:12px 0;border-bottom:1px solid var(--taupe-200)}
   .split,.values,.locs,.foot,.sched,.steps,.price-grid,
   .contact-cards,.maps,.camp-grid,.info-cols,.story,.form .row2,
-  .hero-grid,.kids-split{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
   .story-section{padding:20px 0}
   .story{gap:16px}
   .story .portrait{width:100%;max-width:360px;margin:0 auto}
@@ -464,11 +459,6 @@ footer.site::before{content:"";position:absolute;top:0;left:0;right:0;height:4px
   .hero-cta{justify-content:center}
   .hero-media{order:2}
   .hero-photo.main{width:min(100%,560px)}
-  .kids-split{gap:32px}
-  /* Kruhy vedle sebe místo překryvu (spolehlivější na úzkých displejích) */
-  .kids-media{max-width:420px;margin:0 auto;width:100%;aspect-ratio:auto;display:flex;gap:14px;align-items:center}
-  .kids-photo{position:static}
-  .kids-photo.main,.kids-photo.sub{flex:1 1 0;min-width:0;width:auto;border-width:5px}
   .foot{gap:32px;text-align:center}
   .legal{justify-content:center;text-align:center}
   section{padding:56px 0}
