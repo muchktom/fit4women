@@ -105,7 +105,7 @@ header.site .brand img{height:56px;width:auto;max-width:none;display:block}
     radial-gradient(24% 48% at 93% 86%,rgba(224,184,98,.3),transparent 72%),
     radial-gradient(30% 55% at 8% 100%,rgba(190,140,233,.26),transparent 72%)}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;
-  gap:48px;align-items:center;min-height:min(90vh,760px);padding-top:56px;padding-bottom:24px}
+  gap:40px;align-items:center;padding-top:32px;padding-bottom:12px}
 .hero-copy{max-width:560px}
 .hero-sub{font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;
   font-size:.78rem;font-weight:700;color:var(--purple-700);margin-bottom:16px}
@@ -119,10 +119,10 @@ header.site .brand img{height:56px;width:auto;max-width:none;display:block}
   box-shadow:0 0 0 4px rgba(224,184,98,.3)}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
 .hero-tagline{position:relative;z-index:2;text-align:center;max-width:640px;
-  margin:0 auto;padding:0 0 56px;font-size:1.05rem;color:var(--plum-900)}
+  margin:0 auto;padding:0 0 32px;font-size:1.05rem;color:var(--plum-900)}
 .hero .btn-ghost{color:var(--plum-900);border-color:rgba(46,31,61,.55)}
 .hero .btn-ghost:hover{background:rgba(255,255,255,.35)}
-.hero-media{position:relative;display:grid;place-items:center;min-width:0;min-height:420px}
+.hero-media{position:relative;display:grid;place-items:center;min-width:0}
 .hero-photo{height:auto;object-fit:cover}
 .hero-photo.main{position:relative;width:min(100%,560px);aspect-ratio:1448/1080;
   -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%),
@@ -447,10 +447,10 @@ footer.site::before{content:"";position:absolute;top:0;left:0;right:0;height:4px
   .ref-carousel-track{flex-direction:column;overflow-x:hidden;gap:16px}
   .ref-carousel-track .ref{flex:0 0 auto;width:100%}
   /* Hero: text nad fotkou, fotka na plnou šířku */
-  .hero-grid{gap:36px;text-align:center;padding-top:44px}
+  .hero-grid{gap:24px;text-align:center;padding-top:28px;padding-bottom:8px}
   .hero-copy{max-width:none;margin:0 auto}
   .hero-cta{justify-content:center}
-  .hero-media{min-height:0;order:2}
+  .hero-media{order:2}
   .hero-photo.main{width:min(100%,560px)}
   .kids-split{gap:32px}
   /* Kruhy vedle sebe místo překryvu (spolehlivější na úzkých displejích) */
