@@ -175,9 +175,10 @@
 
 {# --- Karta v mřížce campu (nadpis + odrážky). Odrážky jdou do těla přes {% call %} jako <li>…</li>.
      storno=true použije tečky místo fajfek (storno podmínky). --- #}
-{% macro campCard(title, storno=false) %}
+{% macro campCard(title, storno=false, note="") %}
 <div class="camp-card{{ ' storno' if storno }}">
   <h3>{{ title }}</h3>
   <ul>{{ caller() }}</ul>
+  {% if note %}<p class="camp-card-note">{{ note }}</p>{% endif %}
 </div>
 {% endmacro %}

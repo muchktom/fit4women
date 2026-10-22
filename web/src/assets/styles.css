@@ -413,6 +413,7 @@ details.faq .a{padding:0 0 20px;color:var(--muted)}
 .camp-card li:last-child{border-bottom:0}
 .camp-card li::before{content:"✓";position:absolute;left:0;color:var(--purple-500);font-weight:700}
 .camp-card.storno li::before{content:"•";color:var(--taupe-700)}
+.camp-card-note{margin:14px 0 0;color:var(--ink);line-height:1.6}
 
 /* ---------- Footer ---------- */
 footer.site{background:var(--plum-900);color:#e8dcec;padding:56px 0 26px;position:relative}
