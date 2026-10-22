@@ -51,9 +51,7 @@ se od něj neodchylovat:
 - **S dětmi i bez dětí – obojí je v pohodě.** Nikdy nerámovat cvičení s dětmi
   jako kompromis nebo cvičení bez dětí jako "sobecké". Obě varianty jsou
   rovnocenná nabídka, ne náhradní řešení.
-- **Nízký práh vstupu.** „První lekce zdarma", „nezávazně vyzkoušet", „žádná
-  složitá logistika" – opakovaně se snižuje bariéra prvního kroku dřív, než
-  se mluví o ceně nebo závazku.
+- **Jasný první krok.** Přihlášení i informace o ceně jsou snadno dostupné.
 
 ---
 
@@ -71,8 +69,8 @@ Většina sekcí sleduje stejný vzorec (viz `components.njk` → `sectionHead`,
 - **Lead / popisek pod nadpisem**: 1–2 věty, rozvíjí nadpis, končí buď
   konkrétním benefitem, nebo měkkým emočním obratem.
 - **Finální CTA sekce** (`finalCta`) na konci každé stránky: krátká osobní
-  citace/výzva + dvě tlačítka – jedno nízkoprahové (první lekce zdarma),
-  jedno alternativní (kontakt/konzultace). Vzor:
+  citace/výzva + tlačítko k přihlášení a případně alternativní kontakt.
+  Vzor:
   > "Ten první krok bývá nejtěžší. Ale nejsi na to sama. Provedu tě jím
   > a budu tě podporovat na každém metru tvojí cesty."
 
@@ -85,20 +83,17 @@ neosobní infinitiv:
 
 - „Chci začít" / „Chci individuální lekci" (ne "Přihlásit se zde")
 - „Zjistit více"
-- „Přijď na první lekci zdarma"
+- „Přihlásit se na lekci"
 - „Domluvit si konzultaci" / "Napiš mi"
-- „Rezervovat první lekci zdarma"
+- „Chci začít"
 - „Přidat se do skupiny" (WhatsApp)
 - „Přidat se" (primární CTA v hlavičce – nejkratší možná verze)
 
 Vzorec: sloveso v 1. osobě přítomném/infinitivu jasně pojmenovává výsledek
-akce, ne mechaniku formuláře. Když je bariéra vstupu klíčová, tlačítko to
-připomíná („zdarma").
+akce, ne mechaniku formuláře.
 
 ### Badge / tag mikrocopy
 
-- Badge s tečkou v hero sekci: „První lekce zdarma" (dot + krátký text,
-  ne celá věta).
 - Tag „Kids-friendly" – anglicismus záměrně, je to zavedený termín cílovky.
 - Ceníkové karty: krátké popisky bez sloves – „skupinová lekce venku, Újezd
   nad Lesy", ne "Toto je skupinová lekce, která probíhá venku...".

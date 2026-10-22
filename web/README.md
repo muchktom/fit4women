@@ -97,5 +97,4 @@ a otevřou poštovního klienta (`data-mailform` v `src/assets/site.js`).
 - [ ] **Reference** (Úvod) — placeholder citace → doplnit reálné (jméno, věk, foto se svolením).
 - [ ] **Počet žen v komunitě** — „30+", upravit dle reality.
 - [ ] **WhatsApp odkaz** — v `src/_data/site.js` ověřit platnost.
-- [ ] **„První lekce zdarma"** — potvrdit, že nabídka platí (jinak upravit texty a CTA).
 - [ ] Napojení formulářů na rezervační systém (viz výše).
