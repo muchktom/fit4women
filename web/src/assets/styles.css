@@ -95,7 +95,7 @@ header.site .brand img{height:56px;width:auto;max-width:none;display:block}
 .burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
 .burger span{display:block;width:24px;height:2px;background:var(--plum-900);margin:5px 0;border-radius:2px}
 
-/* ---------- Hero (domovská) – split: text + kruhové fotky ---------- */
+/* ---------- Hero (domovská) – split: text + fotografie ---------- */
 .hero{position:relative;color:var(--plum-900);overflow:hidden;padding:0;
   background:
     linear-gradient(116deg,#f4ddec 0%,#e8ddf3 38%,#d9f0eb 72%,#fbefd6 100%)}
@@ -122,15 +122,15 @@ header.site .brand img{height:56px;width:auto;max-width:none;display:block}
   margin:0 auto;padding:0 0 56px;font-size:1.05rem;color:var(--plum-900)}
 .hero .btn-ghost{color:var(--plum-900);border-color:rgba(46,31,61,.55)}
 .hero .btn-ghost:hover{background:rgba(255,255,255,.35)}
-.hero-media{position:relative;height:100%;min-height:420px}
-.hero-media::before{content:"";position:absolute;inset:-14%;z-index:0;pointer-events:none;filter:blur(34px);
-  background:
-    radial-gradient(42% 42% at 48% 34%,rgba(231,132,191,.72),transparent 72%),
-    radial-gradient(44% 46% at 70% 66%,rgba(92,194,179,.72),transparent 72%),
-    radial-gradient(34% 34% at 24% 78%,rgba(224,184,98,.55),transparent 72%)}
-.hero-photo{position:absolute;z-index:1;height:auto;border-radius:50%;object-fit:cover;
-  border:5px solid rgba(255,255,255,.9);box-shadow:0 24px 60px rgba(46,31,61,.45)}
-.hero-photo.main{width:min(76%,380px);aspect-ratio:1;top:50%;left:50%;transform:translate(-52%,-50%)}
+.hero-media{position:relative;display:grid;place-items:center;min-width:0;min-height:420px}
+.hero-photo{height:auto;object-fit:cover}
+.hero-photo.main{position:relative;width:min(100%,560px);aspect-ratio:1448/1080;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%),
+    linear-gradient(to bottom,transparent 0%,#000 8%,#000 92%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%),
+    linear-gradient(to bottom,transparent 0%,#000 8%,#000 92%,transparent 100%);
+  mask-composite:intersect}
 .hero-photo.sub{width:min(38%,180px);aspect-ratio:1;right:9%;bottom:11%;border-width:4px;
   box-shadow:0 16px 40px rgba(46,31,61,.4)}
 
@@ -450,7 +450,8 @@ footer.site::before{content:"";position:absolute;top:0;left:0;right:0;height:4px
   .hero-grid{gap:36px;text-align:center;padding-top:44px}
   .hero-copy{max-width:none;margin:0 auto}
   .hero-cta{justify-content:center}
-  .hero-media{min-height:340px;order:2}
+  .hero-media{min-height:0;order:2}
+  .hero-photo.main{width:min(100%,560px)}
   .kids-split{gap:32px}
   /* Kruhy vedle sebe místo překryvu (spolehlivější na úzkých displejích) */
   .kids-media{max-width:420px;margin:0 auto;width:100%;aspect-ratio:auto;display:flex;gap:14px;align-items:center}
