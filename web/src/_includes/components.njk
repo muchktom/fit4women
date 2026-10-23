@@ -95,11 +95,12 @@
 {% endmacro %}
 
 {# --- Hlavička podstránky (nadpis + text nahoře, na sandovém pozadí) --- #}
-{% macro pageHero(title, text) %}
+{% macro pageHero(title, text, note="") %}
 <section class="page-hero">
   <div class="wrap">
     <h1>{{ title }}</h1>
     <p>{{ text | safe }}</p>
+    {% if note %}<p class="page-hero-note">{{ note }}</p>{% endif %}
   </div>
 </section>
 {% endmacro %}
